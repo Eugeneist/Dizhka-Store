@@ -1,13 +1,23 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { ParallaxProvider } from "react-scroll-parallax";
-// import { MainPage } from "./pages/MainPage";
-import { Header } from "./components";
+import { MainPage } from "./pages";
+// import { Header } from "./components";
+
+import Fonts from "./Fonts.js";
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'KTFJermilov-Solid', sans-serif`,
+    body: `'KTFJermilov-Solid', sans-serif`,
+  },
+});
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
+      <Fonts />
       <ParallaxProvider>
-        <Header />
+        <MainPage />
       </ParallaxProvider>
     </ChakraProvider>
   );

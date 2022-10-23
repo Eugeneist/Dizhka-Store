@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { ParallaxBanner } from "react-scroll-parallax";
 
-import logo from "../../images/logo.png";
+import logo_full from "../../images/logo_full.png";
 import bg from "../../images/bg.png";
 import foreground from "../../images/bg_first.png";
+
+// import KTFJermilovSolid from "../../fonts/KTFJermilov-Solid.ttf";
 
 // const Container = styled.header`
 //   position: relative;
@@ -19,16 +21,24 @@ import foreground from "../../images/bg_first.png";
 
 // const LayerHeader = styled.div``;
 
-const LayerLogo = styled.div`\
-background-image: url(${logo});
-width: 100px;
-height: 103px;
-top: 220px;
-right: 46%;
-position: absolute;
-background-size: cover;
-background-repeat: no-repeat;
+const LayerLogo = styled.div`
+  background-image: url(${logo_full});
+  width: 328px;
+  height: 79px;
+  top: 220px;
+  right: 38%;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  text-align: center;
 `;
+
+// const LogoText = styled.h1`
+//   font: 48px/50px "KTFJermilov-Solid", sans-serif;
+//   color: #fff;
+//   width: 500px;
+// `;
 
 // const ParallaxBase = styled.div`
 //   background-image: url(${bg});
@@ -59,14 +69,16 @@ const Parallax = () => {
           width: "100%",
           height: "100vh",
           display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
         layers={[
           { image: bg, speed: -10 },
+          { image: foreground, speed: 10 },
           {
             speed: -15,
             children: <LayerLogo />,
           },
-          { image: foreground, speed: 10 },
         ]}
         className="aspect-[2/1]"
       />
