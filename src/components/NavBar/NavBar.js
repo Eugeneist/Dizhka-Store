@@ -59,6 +59,7 @@ const NavBar = () => {
         bg={useColorModeValue("black")}
         px={4}
         py={1}
+        zIndex="999"
       >
         <Grid
           h={16}
