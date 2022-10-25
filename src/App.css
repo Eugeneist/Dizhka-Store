@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
+@font-face {
+  font-family: KTFJermilov;
+  src: url(./fonts/KTFJermilov-Solid.ttf);
+}
+
+.title{
+  font-family: KTFJermilov;
+}
+
 
 .App {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 
-.logo_1:hover + .logo_2:hover + .logo_3:hover{
-  fill:#f88654;
-}
 
 .product__btn{
   opacity: 0.5;
@@ -19,5 +25,60 @@
   cursor: pointer;
   opacity: 1;
   transition: all ease 0.4s;
+}
+
+@media (max-width: 1450px) {
+  html{
+    font-size: 12px
+  }
+}
+
+
+@media (max-width: 1150px) {
+  html{
+    font-size: 10px
+  }
+}
+
+@media (max-width: 950px) {
+  html{
+    font-size: 9px
+  }
+}
+
+@media (max-width: 800px) {
+  html{
+    font-size: 8px
+  }
+}
+
+@media (max-width: 700px) {
+  html{
+    font-size: 7px
+  }
+}
+
+@media (max-width: 600px) {
+  html{
+    font-size: 6px
+  }
+}
+
+@media (max-width: 500px) {
+  html{
+    font-size: 5px
+  }
+}
+
+@media (max-width: 400px) {
+  html{
+    font-size: 4px
+  }
+}
+
+@media (max-width: 300px) {
+  html{
+    font-size: 3px
+  }
 }
 
