@@ -1,10 +1,13 @@
-import { Text, Heading, Box, Grid, Flex } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import { Text, Heading, Box, Grid, Flex, Button } from "@chakra-ui/react";
+import { TiShoppingCart } from "react-icons/ti";
 import { Header } from "../../components";
 import "../../App.css";
 import styled from "styled-components";
 
 import bg_about from "../../images/bg_about.jpg";
 import divider01 from "../../images/divider02.jpg";
+import divider_tablet from "../../images/divider_tablet.jpg";
 import beer from "../../images/beer.jpg";
 import bg_beer from "../../images/bg_beer.jpg";
 import gin from "../../images/gin.jpg";
@@ -60,6 +63,17 @@ const Logo = styled.a`
 `;
 
 const HomePage = () => {
+  const [tablet, setTablet] = useState(false);
+
+  const availableScreenWidth = window.screen.availWidth;
+
+  useEffect(() => {
+    if (availableScreenWidth < 830) {
+      setTablet(true);
+    }
+    console.log(availableScreenWidth);
+  }, [availableScreenWidth]);
+
   return (
     <>
       <Header />
@@ -89,7 +103,19 @@ const HomePage = () => {
           </Box>
         </SectionInner>
       </SectionContainer>
-      <Divider bgImage={divider01} attach={"scroll"} height={"100vh"}></Divider>
+      {tablet ? (
+        <Divider
+          className="divider"
+          bgImage={divider_tablet}
+          attach={"scroll"}
+        ></Divider>
+      ) : (
+        <Divider
+          className="divider"
+          bgImage={divider01}
+          attach={"scroll"}
+        ></Divider>
+      )}
       <Divider bgImage={beer} attach={"fixed"} height={"50vh"}>
         <Heading
           fontFamily="KTFJermilov, sans-serif"
@@ -764,6 +790,61 @@ const HomePage = () => {
               </Flex>
             </Flex>
           </Grid>
+        </SectionInner>
+      </SectionContainer>
+      <SectionContainer
+        style={{
+          backgroundColor: "#000",
+          justifyContent: "space-between",
+          textAlign: "center",
+        }}
+      >
+        <SectionInner style={{ margin: 0, maxWidth: "2400px" }}>
+          <Flex direction={"column"}>
+            <Box py={10}>
+              <Text
+                fontFamily="'Montserrat', sans-serif"
+                textTransform={"uppercase"}
+                fontSize="3rem"
+                align={"left"}
+                color={"#fff"}
+                pl={40}
+              >
+                Хочеш замовити?
+              </Text>
+            </Box>
+            <Box py={10}>
+              <Text
+                fontFamily="'Montserrat', sans-serif"
+                textTransform={"uppercase"}
+                fontSize="3rem"
+                align={"right"}
+                color={"#fff"}
+                pr={35}
+              >
+                Або переглянути товари?
+              </Text>
+            </Box>
+            <Flex alignItems={"center"} direction={"column"} py={10}>
+              <Text
+                fontFamily="'Montserrat', sans-serif"
+                textTransform={"uppercase"}
+                fontSize="3rem"
+                align={"center"}
+                color={"#fff"}
+                pb={20}
+              >
+                Мершій до лавки!
+              </Text>
+              <Button
+                leftIcon={<TiShoppingCart />}
+                bgColor="#f88654"
+                variant="solid"
+              >
+                ЛАВКА!
+              </Button>
+            </Flex>
+          </Flex>
         </SectionInner>
       </SectionContainer>
     </>

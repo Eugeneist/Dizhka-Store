@@ -1,23 +1,9 @@
-import styled from "styled-components";
 import { ParallaxBanner } from "react-scroll-parallax";
+import { Heading } from "@chakra-ui/react";
+import "../../App.css";
 
-import logo_full from "../../images/logo_full.png";
 import bg from "../../images/bg.png";
 import foreground from "../../images/bg_first.png";
-
-const LayerLogo = styled.div`
-  background-image: url(${logo_full});
-  width: 328px;
-  height: 79px;
-  top: 220px;
-  right: 38%;
-  position: absolute;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0 auto;
-  text-align: center;
-  cursor: pointer;
-`;
 
 const Parallax = () => {
   return (
@@ -35,7 +21,21 @@ const Parallax = () => {
           { image: foreground, speed: 10 },
           {
             speed: -15,
-            children: <LayerLogo />,
+            children: (
+              <Heading
+                className="parallax__title"
+                position="absolute"
+                fontFamily="KTFJermilov, sans-serif"
+                fontSize="6.25rem"
+                fontWeight="normal"
+                top="220px"
+                right="50%"
+                transform="translate(51%, 0)"
+                cursor="pointer"
+              >
+                ДIZHKA
+              </Heading>
+            ),
           },
         ]}
         className="aspect-[2/1]"

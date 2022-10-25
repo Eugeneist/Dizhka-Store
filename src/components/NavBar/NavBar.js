@@ -1,5 +1,4 @@
 import {
-  Box,
   Icon,
   Grid,
   GridItem,
@@ -28,7 +27,7 @@ const Logo = styled.a`
   cursor: pointer;
 `;
 
-const Links = ["ДОМАШНЯ", "МАГАЗИН", "КОНТАКТИ"];
+const Links = ["ДОМАШНЯ", "ЛАВКА", "КОНТАКТИ"];
 
 const IconLinks = [
   <Icon as={TiHeartFullOutline} w={7} h={7} />,
@@ -55,7 +54,9 @@ const NavBar = () => {
 
   return (
     <>
-      <Box
+      <Grid
+        alignItems={"center"}
+        height={"80px"}
         position={"sticky"}
         top={"0"}
         bg={useColorModeValue("black")}
@@ -80,7 +81,7 @@ const NavBar = () => {
             <HStack
               as={"nav"}
               spacing={4}
-              fontSize="0.9375rem"
+              fontSize="1rem"
               fontFamily="'Montserrat', sans-serif"
               display={{ base: "none", md: "flex" }}
             >
@@ -140,7 +141,7 @@ const NavBar = () => {
             </Flex>
           </GridItem>
         </Grid>
-      </Box>
+      </Grid>
     </>
   );
 };
