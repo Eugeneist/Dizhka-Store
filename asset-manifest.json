@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.6eb8223b.css",
-    "main.js": "/static/js/main.8ef596a8.js",
-    "static/js/787.e9a1622a.chunk.js": "/static/js/787.e9a1622a.chunk.js",
-    "static/media/bg.png": "/static/media/bg.484cb54ab2a21da5991c.png",
-    "static/media/bg_front.png": "/static/media/bg_front.ffedb9aca1b3ef324d0b.png",
-    "static/media/divider02.jpg": "/static/media/divider02.26223bfc9c320f23c4ac.jpg",
-    "static/media/divider_tablet.jpg": "/static/media/divider_tablet.506c3f7a110c3a86d786.jpg",
-    "static/media/bg_beer.jpg": "/static/media/bg_beer.7ab68a1801c3fde6350c.jpg",
-    "static/media/vodka.jpg": "/static/media/vodka.46ff6c88e57d84f29b1a.jpg",
-    "static/media/bg_whiskey.jpg": "/static/media/bg_whiskey.945c254df5b61841bc60.jpg",
-    "static/media/gin.jpg": "/static/media/gin.4afd2e5ae2b45490bfde.jpg",
-    "static/media/beer.jpg": "/static/media/beer.d4288bf5fa6bbbf56830.jpg",
-    "static/media/bg_vodka.jpg": "/static/media/bg_vodka.575ff812cbae7dbb2e01.jpg",
-    "static/media/bg_about.jpg": "/static/media/bg_about.9c09a86b9853c35050fc.jpg",
-    "static/media/bg_gin.jpg": "/static/media/bg_gin.36956dff3411d5cffade.jpg",
-    "static/media/whiskey.jpg": "/static/media/whiskey.4b9e699b6c29bfcdbb87.jpg",
-    "static/media/KTFJermilov-Solid.ttf": "/static/media/KTFJermilov-Solid.d2a35dfd7e098e0aa5e0.ttf",
-    "index.html": "/index.html",
-    "main.6eb8223b.css.map": "/static/css/main.6eb8223b.css.map",
-    "main.8ef596a8.js.map": "/static/js/main.8ef596a8.js.map",
-    "787.e9a1622a.chunk.js.map": "/static/js/787.e9a1622a.chunk.js.map"
+    "main.css": "/Dizhka-Store/static/css/main.84ffd6e3.css",
+    "main.js": "/Dizhka-Store/static/js/main.071897ff.js",
+    "static/js/787.e9a1622a.chunk.js": "/Dizhka-Store/static/js/787.e9a1622a.chunk.js",
+    "static/media/bg.png": "/Dizhka-Store/static/media/bg.484cb54ab2a21da5991c.png",
+    "static/media/bg_front.png": "/Dizhka-Store/static/media/bg_front.ffedb9aca1b3ef324d0b.png",
+    "static/media/divider02.jpg": "/Dizhka-Store/static/media/divider02.26223bfc9c320f23c4ac.jpg",
+    "static/media/divider_tablet.jpg": "/Dizhka-Store/static/media/divider_tablet.506c3f7a110c3a86d786.jpg",
+    "static/media/bg_beer.jpg": "/Dizhka-Store/static/media/bg_beer.7ab68a1801c3fde6350c.jpg",
+    "static/media/vodka.jpg": "/Dizhka-Store/static/media/vodka.46ff6c88e57d84f29b1a.jpg",
+    "static/media/bg_whiskey.jpg": "/Dizhka-Store/static/media/bg_whiskey.945c254df5b61841bc60.jpg",
+    "static/media/gin.jpg": "/Dizhka-Store/static/media/gin.4afd2e5ae2b45490bfde.jpg",
+    "static/media/beer.jpg": "/Dizhka-Store/static/media/beer.d4288bf5fa6bbbf56830.jpg",
+    "static/media/bg_vodka.jpg": "/Dizhka-Store/static/media/bg_vodka.575ff812cbae7dbb2e01.jpg",
+    "static/media/bg_about.jpg": "/Dizhka-Store/static/media/bg_about.9c09a86b9853c35050fc.jpg",
+    "static/media/bg_gin.jpg": "/Dizhka-Store/static/media/bg_gin.36956dff3411d5cffade.jpg",
+    "static/media/whiskey.jpg": "/Dizhka-Store/static/media/whiskey.4b9e699b6c29bfcdbb87.jpg",
+    "static/media/KTFJermilov-Solid.ttf": "/Dizhka-Store/static/media/KTFJermilov-Solid.d2a35dfd7e098e0aa5e0.ttf",
+    "index.html": "/Dizhka-Store/index.html",
+    "main.84ffd6e3.css.map": "/Dizhka-Store/static/css/main.84ffd6e3.css.map",
+    "main.071897ff.js.map": "/Dizhka-Store/static/js/main.071897ff.js.map",
+    "787.e9a1622a.chunk.js.map": "/Dizhka-Store/static/js/787.e9a1622a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6eb8223b.css",
-    "static/js/main.8ef596a8.js"
+    "static/css/main.84ffd6e3.css",
+    "static/js/main.071897ff.js"
   ]
 }
