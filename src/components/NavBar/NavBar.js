@@ -60,7 +60,7 @@ const NavBar = () => {
         position={"sticky"}
         top={"0"}
         bg={useColorModeValue("black")}
-        px={4}
+        px={8}
         py={1}
         zIndex="999"
       >
