@@ -2,8 +2,8 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { Heading } from "@chakra-ui/react";
 import "../../App.css";
 
-import bg from "../../images/bg.png";
-import foreground from "../../images/bg_front.png";
+import bg from "../../assets/images/bg.jpg";
+import foreground from "../../assets/images/bg_front.png";
 
 const Parallax = () => {
   return (

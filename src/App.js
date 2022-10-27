@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ParallaxProvider } from "react-scroll-parallax";
+// import { Product } from "./components";
 import { HomePage } from "./pages";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <ChakraProvider>
       <ParallaxProvider>
         <HomePage />
+        {/* <Product /> */}
       </ParallaxProvider>
     </ChakraProvider>
   );

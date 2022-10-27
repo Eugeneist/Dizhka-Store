@@ -1,5 +1,6 @@
 {
   "name": "dizhka-store",
+  "homepage": "https://eugeneist.github.io/Dizhka-Store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

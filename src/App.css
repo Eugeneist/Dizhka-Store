@@ -4,7 +4,11 @@
 
 @font-face {
   font-family: KTFJermilov;
-  src: url(./fonts/KTFJermilov-Solid.ttf);
+  src: url(./assets/fonts/KTFJermilov-Solid.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 
@@ -37,6 +41,7 @@
   opacity: 1;
   transition: all ease 0.4s;
 }
+
 
 @media (max-width: 1450px) {
   html{
@@ -89,8 +94,9 @@
 
 @media (max-width: 400px) {
   html{
-    font-size: 4px
+    font-size: 4px /* 12px for mobile later */
   }
+
 }
 
 @media (max-width: 300px) {
