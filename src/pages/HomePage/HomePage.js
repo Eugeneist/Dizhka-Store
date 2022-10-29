@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Text, Heading, Box, Grid, Flex, Button } from "@chakra-ui/react";
 import { TiShoppingCart } from "react-icons/ti";
+import { NavLink } from "react-router-dom";
 import { Form, Header, Footer, Logo } from "../../components";
 import "../../App.css";
 import { SectionContainer, SectionInner, Divider } from "../../styles/Styles";
@@ -677,20 +678,22 @@ const HomePage = () => {
               >
                 Мершій до лавки!
               </Text>
-              <Button
-                leftIcon={<TiShoppingCart />}
-                color="#fff"
-                bgColor="#f88654"
-                variant="solid"
-                py={"7"}
-                px={"7"}
-                _hover={{
-                  bgColor: "#fff",
-                  color: "#000",
-                }}
-              >
-                ДО ЛАВКИ!
-              </Button>
+              <NavLink to="/store">
+                <Button
+                  leftIcon={<TiShoppingCart />}
+                  color="#fff"
+                  bgColor="#f88654"
+                  variant="solid"
+                  py={"7"}
+                  px={"7"}
+                  _hover={{
+                    bgColor: "#fff",
+                    color: "#000",
+                  }}
+                >
+                  ДО ЛАВКИ!
+                </Button>
+              </NavLink>
             </Flex>
           </Flex>
         </SectionInner>

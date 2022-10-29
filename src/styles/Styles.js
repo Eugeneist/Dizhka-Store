@@ -2,6 +2,18 @@ import styled from "styled-components";
 
 const toRem = (value) => `${value / 16}rem`;
 
+export const Container = styled.div`
+  padding: ${toRem(45)} ${toRem(60)} ${toRem(25)} ${toRem(60)};
+  background-image: url(${(props) => props.bgImage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const SectionContainer = styled.section`
   padding: ${toRem(45)} ${toRem(60)} ${toRem(25)} ${toRem(60)};
   background-image: url(${(props) => props.bgImage});

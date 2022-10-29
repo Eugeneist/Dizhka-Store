@@ -9,32 +9,22 @@ import {
   useDisclosure,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { TiShoppingCart, TiHeartFullOutline } from "react-icons/ti";
 import { Logo } from "../Logo";
 import "../../App.css";
 
-const Links = ["ДОМАШНЯ", "ЛАВКА", "КОНТАКТИ"];
-
-const IconLinks = [
-  <Icon as={TiHeartFullOutline} w={7} h={7} />,
-  <Icon as={TiShoppingCart} w={7} h={7} />,
-];
-
-const NavLink = ({ children }) => (
-  <Link
-    alignItems={"center"}
-    justifyContent={"center"}
-    color="white"
-    _hover={{
-      textDecoration: "none",
-      color: "#f88654",
-    }}
-    href={"#"}
-  >
-    {children}
-  </Link>
-);
+<Link
+  alignItems={"center"}
+  justifyContent={"center"}
+  color="white"
+  _hover={{
+    textDecoration: "none",
+    color: "#f88654",
+  }}
+  href={"#"}
+></Link>;
 
 const NavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -72,14 +62,52 @@ const NavBar = () => {
               fontFamily="'Montserrat', sans-serif"
               display={{ base: "none", md: "flex" }}
             >
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
+              <NavLink to="/">
+                <Link
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  color="white"
+                  _hover={{
+                    textDecoration: "none",
+                    color: "#f88654",
+                  }}
+                >
+                  ДОМАШНЯ
+                </Link>
+              </NavLink>
+              <NavLink to="/store">
+                <Link
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  color="white"
+                  _hover={{
+                    textDecoration: "none",
+                    color: "#f88654",
+                  }}
+                >
+                  ЛАВКА
+                </Link>
+              </NavLink>
+              <NavLink to="/contacts">
+                <Link
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  color="white"
+                  _hover={{
+                    textDecoration: "none",
+                    color: "#f88654",
+                  }}
+                >
+                  КОНТАКТИ
+                </Link>
+              </NavLink>
             </HStack>
           </GridItem>
           <GridItem textAlign={"center"}>
             <HStack spacing={8} alignItems={"center"}>
-              <Logo width={"90%"} height={"91%"} />
+              <NavLink to="/">
+                <Logo width={"90%"} height={"91%"} />
+              </NavLink>
             </HStack>
           </GridItem>
           <GridItem>
@@ -89,9 +117,34 @@ const NavBar = () => {
                 spacing={4}
                 display={{ base: "none", md: "flex" }}
               >
-                {IconLinks.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
-                ))}
+                <NavLink to="/favorite">
+                  <Link
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    color="white"
+                    _hover={{
+                      textDecoration: "none",
+                      color: "#f88654",
+                    }}
+                    href={"#"}
+                  >
+                    <Icon as={TiHeartFullOutline} w={7} h={7} />
+                  </Link>
+                </NavLink>
+                <NavLink to="/cart">
+                  <Link
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    color="white"
+                    _hover={{
+                      textDecoration: "none",
+                      color: "#f88654",
+                    }}
+                    href={"#"}
+                  >
+                    <Icon as={TiShoppingCart} w={7} h={7} />
+                  </Link>
+                </NavLink>
               </HStack>
             </Flex>
           </GridItem>

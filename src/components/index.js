@@ -5,3 +5,5 @@ export { Form } from "./Form";
 export { Footer } from "./Footer";
 export { Product } from "./Product";
 export { Logo } from "./Logo";
+export { ProductList } from "./ProductList";
+export { ProductCard } from "./ProductCard";

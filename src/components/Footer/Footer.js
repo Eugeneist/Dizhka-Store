@@ -9,6 +9,7 @@ import {
   Divider,
   Icon,
 } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 import { GrInstagram } from "react-icons/gr";
 import { BsTelegram } from "react-icons/bs";
 import { Logo } from "../Logo";
@@ -23,7 +24,9 @@ const Footer = () => {
         justify="space-between"
         p={10}
       >
-        <Logo width={"20%"} height={"21%"} />
+        <NavLink to="/">
+          <Logo width={"50%"} height={"51%"} />
+        </NavLink>
         <HStack
           alignItems="start"
           flex={1}
@@ -36,30 +39,36 @@ const Footer = () => {
             <Text fontWeight={"bold"} textTransform="uppercase">
               Карта сайту
             </Text>
-            <Link
-              _hover={{
-                color: "#f88654",
-              }}
-              textTransform="uppercase"
-            >
-              Домашня сторінка
-            </Link>
-            <Link
-              _hover={{
-                color: "#f88654",
-              }}
-              textTransform="uppercase"
-            >
-              Лавка
-            </Link>
-            <Link
-              _hover={{
-                color: "#f88654",
-              }}
-              textTransform="uppercase"
-            >
-              Контакти
-            </Link>
+            <NavLink to="/">
+              <Link
+                _hover={{
+                  color: "#f88654",
+                }}
+                textTransform="uppercase"
+              >
+                Домашня сторінка
+              </Link>
+            </NavLink>
+            <NavLink to="/store">
+              <Link
+                _hover={{
+                  color: "#f88654",
+                }}
+                textTransform="uppercase"
+              >
+                Лавка
+              </Link>
+            </NavLink>
+            <NavLink to="/contacts">
+              <Link
+                _hover={{
+                  color: "#f88654",
+                }}
+                textTransform="uppercase"
+              >
+                Контакти
+              </Link>
+            </NavLink>
           </Flex>
         </HStack>
       </Stack>
