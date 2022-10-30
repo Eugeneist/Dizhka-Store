@@ -7,6 +7,7 @@ import {
   Tooltip,
   Button,
 } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 import { FiShoppingCart } from "react-icons/fi";
 
@@ -47,21 +48,23 @@ const ProductCard = ({
         </Flex>
 
         <Flex justifyContent="space-between" alignContent="center">
-          <Button
-            color="#fff"
-            bgColor="transparent"
-            variant="ghost"
-            _hover={{
-              bg: "#221D23",
-              color: "#f88654",
-            }}
-            _active={{
-              color: "#000",
-              bg: "#fff",
-            }}
-          >
-            Огляд
-          </Button>
+          <NavLink to={`/product/${id}`}>
+            <Button
+              color="#fff"
+              bgColor="transparent"
+              variant="ghost"
+              _hover={{
+                bg: "#221D23",
+                color: "#f88654",
+              }}
+              _active={{
+                color: "#000",
+                bg: "#fff",
+              }}
+            >
+              Огляд
+            </Button>
+          </NavLink>
           <Box
             fontSize="2xl"
             fontWeight="bold"

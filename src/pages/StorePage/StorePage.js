@@ -1,12 +1,23 @@
-import { ProductList, NavBar, Footer } from "../../components";
+import { useState } from "react";
+import { ProductList, NavBar, Footer, Loader } from "../../components";
 const StorePage = () => {
-  return (
-    <>
-      <NavBar />
-      <ProductList />
-      <Footer />
-    </>
-  );
+  const [loaded, setLoaded] = useState(false);
+
+  setTimeout(() => {
+    setLoaded(true);
+  }, 1000);
+
+  if (loaded) {
+    return (
+      <>
+        <NavBar />
+        <ProductList />
+        <Footer />
+      </>
+    );
+  }
+
+  return <Loader />;
 };
 
 export default StorePage;

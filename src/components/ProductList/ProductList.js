@@ -1,54 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Grid } from "@chakra-ui/react";
-import { axios } from "../../helpers";
+
 import { Container, SectionInner } from "../../styles/Styles";
 import { ProductCard } from "../ProductCard";
+import { Loader } from "../Loader";
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  const [filter, setFilter] = useState(products);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState();
+  const state = useSelector((state) => state.productsReducer);
+
+  const [filter, setFilter] = useState(state);
 
   const filterProducts = (category) => {
-    const filteredList = products.filter((x) => x.category === category);
+    const filteredList = state.filter((x) => x.category === category);
     setFilter(filteredList);
   };
 
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get(`/api/products`)
-      .then((data) => {
-        setProducts((prevProducts) => [...prevProducts, ...data]);
-        setFilter((prevProducts) => [...prevProducts, ...data]);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return (
-      <Container
-        style={{ height: "100vh", backgroundColor: "#000", color: "#fff" }}
-      >
-        <SectionInner>Loading...</SectionInner>
-      </Container>
-    );
-  }
-
-  if (error) {
-    return (
-      <Container
-        style={{ height: "100vh", backgroundColor: "#000", color: "#fff" }}
-      >
-        <SectionInner>Error!</SectionInner>
-      </Container>
-    );
+  if (!state) {
+    return <Loader />;
   }
 
   return (
@@ -68,6 +37,7 @@ const ProductList = () => {
             }) => (
               <ProductCard
                 key={id}
+                id={id}
                 title={title}
                 description={description}
                 details={details}

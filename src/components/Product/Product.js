@@ -1,3 +1,6 @@
+// import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 import {
   Box,
   Container,
@@ -14,10 +17,19 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-
 import { MdLocalShipping } from "react-icons/md";
 
 const Product = () => {
+  const state = useSelector((state) => state.productsReducer);
+  const { id } = useParams();
+
+  // const [product, setProduct] = useState(state);
+
+  // useEffect(() => {
+  //   const filteredList = state.filter((x) => x.id === id);
+  //   setProduct(filteredList);
+  // }, [id, state]);
+
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -29,9 +41,7 @@ const Product = () => {
           <Image
             rounded={"md"}
             alt={"product image"}
-            src={
-              "https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080"
-            }
+            src={state[id - 1].thumbnail}
             fit={"cover"}
             align={"center"}
             w={"100%"}
@@ -45,14 +55,14 @@ const Product = () => {
               fontWeight={600}
               fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
             >
-              Automatic Watch
+              {state[id - 1].title}
             </Heading>
             <Text
               color={useColorModeValue("gray.900", "gray.400")}
               fontWeight={300}
               fontSize={"2xl"}
             >
-              $350.00 USD
+              {state[id - 1].price} USD
             </Text>
           </Box>
 

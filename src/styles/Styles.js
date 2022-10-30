@@ -55,3 +55,17 @@ export const LogoInner = styled.a`
   background-repeat: no-repeat;
   cursor: pointer;
 `;
+
+export const LoaderImage = styled.img`
+  width: 25%;
+  margin: 0 auto;
+  animation: spin 3s linear 0s infinite;
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;

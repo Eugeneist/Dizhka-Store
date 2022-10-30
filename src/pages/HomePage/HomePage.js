@@ -2,9 +2,17 @@ import { useState, useEffect } from "react";
 import { Text, Heading, Box, Grid, Flex, Button } from "@chakra-ui/react";
 import { TiShoppingCart } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
-import { Form, Header, Footer, Logo } from "../../components";
+import { Form, Header, Footer, Logo, Loader } from "../../components";
 import "../../App.css";
-import { SectionContainer, SectionInner, Divider } from "../../styles/Styles";
+import {
+  Container,
+  SectionContainer,
+  SectionInner,
+  Divider,
+} from "../../styles/Styles";
+import { useDispatch } from "react-redux";
+import { addToProducts } from "../../actions/productsActions";
+import { axios } from "../../helpers";
 
 import bg_about from "../../assets/images/bg_about.jpg";
 import divider01 from "../../assets/images/divider02.jpg";
@@ -19,6 +27,28 @@ import vodka from "../../assets/images/vodka.jpg";
 import bg_vodka from "../../assets/images/bg_vodka.jpg";
 
 const HomePage = () => {
+  // const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get(`/api/products`)
+      .then((data) => {
+        // setProducts((prevProducts) => [...prevProducts, ...data]);
+        dispatch(addToProducts(data));
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [dispatch]);
+
   const [tablet, setTablet] = useState(false);
 
   const availableScreenWidth = window.screen.availWidth;
@@ -27,8 +57,21 @@ const HomePage = () => {
     if (availableScreenWidth < 830) {
       setTablet(true);
     }
-    console.log(availableScreenWidth);
   }, [availableScreenWidth]);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return (
+      <Container
+        style={{ height: "100vh", backgroundColor: "#000", color: "#fff" }}
+      >
+        <SectionInner>Error!</SectionInner>
+      </Container>
+    );
+  }
 
   return (
     <>
@@ -96,13 +139,24 @@ const HomePage = () => {
                 justify={"center"}
                 color="#fff"
               >
-                <Text
-                  fontFamily="'Montserrat', sans-serif"
-                  textTransform={"uppercase"}
-                  fontSize="2.25rem"
+                <NavLink
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  to={`/product/1`}
                 >
-                  Український світлий ель
-                </Text>
+                  <Text
+                    fontFamily="'Montserrat', sans-serif"
+                    textTransform={"uppercase"}
+                    fontSize="2.25rem"
+                  >
+                    Український світлий ель
+                  </Text>
+                </NavLink>
               </Flex>
               <Box bgColor={"rgba(255,255,255,0.5)"} width={"30%"}></Box>
               <Flex
@@ -162,13 +216,25 @@ const HomePage = () => {
                 justify={"center"}
                 color="#fff"
               >
-                <Text
-                  fontFamily="'Montserrat', sans-serif"
-                  textTransform={"uppercase"}
-                  fontSize="2.25rem"
+                {" "}
+                <NavLink
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  to={`/product/2`}
                 >
-                  Харківський портер
-                </Text>
+                  <Text
+                    fontFamily="'Montserrat', sans-serif"
+                    textTransform={"uppercase"}
+                    fontSize="2.25rem"
+                  >
+                    Харківський портер
+                  </Text>
+                </NavLink>
               </Flex>
               <Flex
                 bgColor={"transparent"}
@@ -203,13 +269,24 @@ const HomePage = () => {
                 justify={"center"}
                 color="#fff"
               >
-                <Text
-                  fontFamily="'Montserrat', sans-serif"
-                  textTransform={"uppercase"}
-                  fontSize="2.25rem"
+                <NavLink
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  to={`/product/3`}
                 >
-                  Пшеничний ель
-                </Text>
+                  <Text
+                    fontFamily="'Montserrat', sans-serif"
+                    textTransform={"uppercase"}
+                    fontSize="2.25rem"
+                  >
+                    Пшеничний ель
+                  </Text>
+                </NavLink>
               </Flex>
               <Box bgColor={"rgba(255,255,255)"} width={"40%"}></Box>
               <Box bgColor={"rgba(0,0,0,0.5)"} width={"20%"}></Box>
@@ -289,13 +366,24 @@ const HomePage = () => {
                 width={"40%"}
                 color="#fff"
               >
-                <Text
-                  fontFamily="'Montserrat', sans-serif"
-                  textTransform={"uppercase"}
-                  fontSize="3.75rem"
+                <NavLink
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  to={`/product/4`}
                 >
-                  ДЖИН
-                </Text>
+                  <Text
+                    fontFamily="'Montserrat', sans-serif"
+                    textTransform={"uppercase"}
+                    fontSize="3.75rem"
+                  >
+                    ДЖИН
+                  </Text>
+                </NavLink>
               </Flex>
               <Flex
                 bgColor={"rgba(255,255,255,0.5)"}
@@ -440,13 +528,24 @@ const HomePage = () => {
                 justify={"center"}
                 color="#fff"
               >
-                <Text
-                  fontFamily="'Montserrat', sans-serif"
-                  textTransform={"uppercase"}
-                  fontSize="2.25rem"
+                <NavLink
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  to={`/product/5`}
                 >
-                  Односолодовий віскі
-                </Text>
+                  <Text
+                    fontFamily="'Montserrat', sans-serif"
+                    textTransform={"uppercase"}
+                    fontSize="2.25rem"
+                  >
+                    Односолодовий віскі
+                  </Text>
+                </NavLink>
               </Flex>
               <Flex
                 bgColor={"transparent"}
@@ -557,13 +656,24 @@ const HomePage = () => {
                 width={"40%"}
                 color="#fff"
               >
-                <Text
-                  fontFamily="'Montserrat', sans-serif"
-                  textTransform={"uppercase"}
-                  fontSize="3.75rem"
+                <NavLink
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  to={`/product/6`}
                 >
-                  Горілка
-                </Text>
+                  <Text
+                    fontFamily="'Montserrat', sans-serif"
+                    textTransform={"uppercase"}
+                    fontSize="3.75rem"
+                  >
+                    Горілка
+                  </Text>
+                </NavLink>
               </Flex>
               <Flex
                 bgColor={"rgba(255,255,255,0.5)"}

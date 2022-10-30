@@ -8,12 +8,14 @@ import App from "./App";
 import "./assets/fonts/KTFJermilov-Solid.ttf";
 import { PersistGate } from "redux-persist/integration/react";
 import reportWebVitals from "./reportWebVitals";
+import { ScrollToTop } from "./components";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
       <PersistGate persistor={persistor} loading={null}>
+        <ScrollToTop />
         <App />
       </PersistGate>
     </BrowserRouter>

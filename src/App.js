@@ -7,6 +7,8 @@ import {
   ContactPage,
   FavoritePage,
   CartPage,
+  ProductPage,
+  NotFound,
 } from "./pages";
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Route path="/contacts" element={<ContactPage />} />
           <Route path="/favorite" element={<FavoritePage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </ParallaxProvider>
     </ChakraProvider>
