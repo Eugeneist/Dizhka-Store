@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Grid } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 import { Container, SectionInner } from "../../styles/Styles";
 import { ProductCard } from "../ProductCard";
@@ -35,17 +36,19 @@ const ProductList = () => {
               category,
               thumbnail,
             }) => (
-              <ProductCard
-                key={id}
-                id={id}
-                title={title}
-                description={description}
-                details={details}
-                price={price}
-                rating={rating}
-                category={category}
-                thumbnail={thumbnail}
-              />
+              <NavLink to={`/product/${id}`}>
+                <ProductCard
+                  key={id}
+                  id={id}
+                  title={title}
+                  description={description}
+                  details={details}
+                  price={price}
+                  rating={rating}
+                  category={category}
+                  thumbnail={thumbnail}
+                />
+              </NavLink>
             )
           )}
         </Grid>
