@@ -8,7 +8,10 @@ import {
   IconButton,
   useDisclosure,
   useColorModeValue,
+  Badge,
+  VisuallyHidden,
 } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { TiShoppingCart, TiHeartFullOutline } from "react-icons/ti";
@@ -19,14 +22,18 @@ import "../../App.css";
   alignItems={"center"}
   justifyContent={"center"}
   color="white"
+  transition={"all ease 0.3s"}
   _hover={{
     textDecoration: "none",
     color: "#f88654",
+    transition: "all ease 0.3s",
   }}
   href={"#"}
 ></Link>;
 
 const NavBar = () => {
+  const cart = useSelector((state) => state.cartReducer);
+  const favorite = useSelector((state) => state.favoriteReducer);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -67,9 +74,11 @@ const NavBar = () => {
                   alignItems={"center"}
                   justifyContent={"center"}
                   color="white"
+                  transition={"all ease 0.3s"}
                   _hover={{
                     textDecoration: "none",
                     color: "#f88654",
+                    transition: "all ease 0.3s",
                   }}
                 >
                   ДОМАШНЯ
@@ -80,9 +89,11 @@ const NavBar = () => {
                   alignItems={"center"}
                   justifyContent={"center"}
                   color="white"
+                  transition={"all ease 0.3s"}
                   _hover={{
                     textDecoration: "none",
                     color: "#f88654",
+                    transition: "all ease 0.3s",
                   }}
                 >
                   ЛАВКА
@@ -93,9 +104,11 @@ const NavBar = () => {
                   alignItems={"center"}
                   justifyContent={"center"}
                   color="white"
+                  transition={"all ease 0.3s"}
                   _hover={{
                     textDecoration: "none",
                     color: "#f88654",
+                    transition: "all ease 0.3s",
                   }}
                 >
                   КОНТАКТИ
@@ -122,13 +135,28 @@ const NavBar = () => {
                     alignItems={"center"}
                     justifyContent={"center"}
                     color="white"
+                    transition={"all ease 0.3s"}
                     _hover={{
                       textDecoration: "none",
                       color: "#f88654",
+                      transition: "all ease 0.3s",
                     }}
                     href={"#"}
                   >
                     <Icon as={TiHeartFullOutline} w={7} h={7} />
+                    {favorite.length > 0 ? (
+                      <Badge variant="solid" bgColor={"#f88654"}>
+                        {favorite.length}
+                      </Badge>
+                    ) : (
+                      <Badge
+                        variant="solid"
+                        color={"transparent"}
+                        bgColor={"transparent"}
+                      >
+                        {favorite.length}
+                      </Badge>
+                    )}
                   </Link>
                 </NavLink>
                 <NavLink to="/cart">
@@ -136,13 +164,28 @@ const NavBar = () => {
                     alignItems={"center"}
                     justifyContent={"center"}
                     color="white"
+                    transition={"all ease 0.3s"}
                     _hover={{
                       textDecoration: "none",
                       color: "#f88654",
+                      transition: "all ease 0.3s",
                     }}
                     href={"#"}
                   >
                     <Icon as={TiShoppingCart} w={7} h={7} />
+                    {cart.length > 0 ? (
+                      <Badge variant="solid" bgColor={"#f88654"}>
+                        {cart.length}
+                      </Badge>
+                    ) : (
+                      <Badge
+                        variant="solid"
+                        color={"transparent"}
+                        bgColor={"transparent"}
+                      >
+                        {cart.length}
+                      </Badge>
+                    )}
                   </Link>
                 </NavLink>
               </HStack>

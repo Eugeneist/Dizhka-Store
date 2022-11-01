@@ -33,13 +33,13 @@ html {
 
 .product__btn{
   opacity: 0.5;
-  transition: all ease 0.4s;
+  transition: all ease 0.6s;
 }
 
 .product__btn:hover{
   cursor: pointer;
   opacity: 1;
-  transition: all ease 0.4s;
+  transition: all ease 0.6s;
 }
 
 

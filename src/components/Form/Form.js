@@ -16,7 +16,8 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { BsInstagram, BsPerson, BsTelegram } from "react-icons/bs";
+import { BsPerson, BsTelegram } from "react-icons/bs";
+import { GrInstagram } from "react-icons/gr";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
 
 const Form = () => {
@@ -82,7 +83,7 @@ const Form = () => {
                 aria-label="instagram"
                 bgColor={"#fff"}
                 size="lg"
-                icon={<BsInstagram size="28px" />}
+                icon={<GrInstagram size="28px" />}
                 _hover={{
                   bg: "#f88654",
                   color: useColorModeValue("white", "gray.700"),

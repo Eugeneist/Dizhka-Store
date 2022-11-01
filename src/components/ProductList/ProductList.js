@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Grid, Flex, Box, Image } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { Grid, Flex, Box } from "@chakra-ui/react";
 
 import { Container, SectionInner } from "../../styles/Styles";
 import { ProductCard } from "../ProductCard";
@@ -103,32 +102,21 @@ const ProductList = () => {
           ></Box>
         </Flex>
         <Grid templateColumns="repeat(3, 1fr)" gap={4}>
-          {filter.map(
-            ({
-              id,
-              title,
-              description,
-              details,
-              price,
-              rating,
-              category,
-              thumbnail,
-            }) => (
-              <NavLink to={`/product/${id}`}>
-                <ProductCard
-                  key={id}
-                  id={id}
-                  title={title}
-                  description={description}
-                  details={details}
-                  price={price}
-                  rating={rating}
-                  category={category}
-                  thumbnail={thumbnail}
-                />
-              </NavLink>
-            )
-          )}
+          {filter.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              descriptionTitle={product.descriptionTitle}
+              description={product.description}
+              details={product.details}
+              price={product.price}
+              rating={product.rating}
+              category={product.category}
+              thumbnail={product.thumbnail}
+              product={product}
+            />
+          ))}
         </Grid>
       </SectionInner>
     </Container>

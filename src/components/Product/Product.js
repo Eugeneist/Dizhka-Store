@@ -1,4 +1,4 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import {
@@ -22,13 +22,20 @@ import {
   Tab,
   TabPanel,
 } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../actions/cartActions";
 import { MdLocalShipping } from "react-icons/md";
 
 const Product = () => {
   const state = useSelector((state) => state.productsReducer);
   const { id } = useParams();
 
-  // const [product, setProduct] = useState(state);
+  const dispatch = useDispatch();
+  const addProduct = (product) => {
+    dispatch(addToCart(product));
+  };
+
+  const [product, setProduct] = useState(state);
 
   // useEffect(() => {
   //   const filteredList = state.filter((x) => x.id === id);
@@ -133,6 +140,7 @@ const Product = () => {
             bg={useColorModeValue("gray.900", "gray.50")}
             color={useColorModeValue("white", "gray.900")}
             textTransform={"uppercase"}
+            onClick={() => addProduct(product)}
             _hover={{
               transform: "translateY(2px)",
               boxShadow: "lg",
