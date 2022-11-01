@@ -75,7 +75,7 @@ const Footer = () => {
       <Divider w="25%" mx="auto" color="#f88654" h="3.5px" />
       <VStack py={3}>
         <HStack justify="center">
-          <Link>
+          <Link href="tg://resolve?domain=nickname" isExternal>
             <Icon
               _hover={{
                 color: "#f88654",
@@ -86,7 +86,7 @@ const Footer = () => {
               as={BsTelegram}
             />
           </Link>
-          <Link>
+          <Link href="https://www.instagram.com/nickname" isExternal>
             <Icon
               _hover={{
                 color: "#f88654",

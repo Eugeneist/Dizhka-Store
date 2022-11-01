@@ -62,7 +62,7 @@ const Form = () => {
               />
             </Tooltip>
 
-            <Link href="#">
+            <Link href="tg://resolve?domain=nickname" isExternal>
               <IconButton
                 aria-label="telegram"
                 bgColor={"#fff"}
@@ -77,7 +77,7 @@ const Form = () => {
               />
             </Link>
 
-            <Link href="#">
+            <Link href="https://www.instagram.com/nickname" isExternal>
               <IconButton
                 aria-label="instagram"
                 bgColor={"#fff"}
