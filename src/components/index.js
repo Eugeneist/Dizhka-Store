@@ -10,3 +10,4 @@ export { ProductCard } from "./ProductCard";
 export { Loader } from "./Loader";
 export { ScrollToTop } from "./ScrollToTop";
 export { Cart } from "./Cart";
+export { FavoriteList } from "./FavoriteList";

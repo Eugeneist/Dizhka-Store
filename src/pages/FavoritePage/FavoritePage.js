@@ -1,13 +1,10 @@
-import { Text } from "@chakra-ui/react";
-import { NavBar, Footer } from "../../components";
+import { NavBar, Footer, FavoriteList } from "../../components";
 
 const FavoritePage = () => {
   return (
     <>
       <NavBar />
-      <div style={{ height: "100vh" }}>
-        <Text>Favorite Page. Under construction.</Text>
-      </div>
+      <FavoriteList />
       <Footer />
     </>
   );

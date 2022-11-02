@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useSelector } from "react-redux";
-import { Grid, Flex, Box } from "@chakra-ui/react";
+import { Grid, Flex, Box, useToast } from "@chakra-ui/react";
 
 import { Container, SectionInner } from "../../styles/Styles";
 import { ProductCard } from "../ProductCard";

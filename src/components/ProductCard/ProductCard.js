@@ -1,3 +1,5 @@
+import { useRef, useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import {
   Flex,
   Box,
@@ -5,6 +7,7 @@ import {
   Tooltip,
   Button,
   IconButton,
+  useToast,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -15,6 +18,7 @@ import {
 } from "../../actions/favoriteActions";
 
 import { FiShoppingCart } from "react-icons/fi";
+import { IoHeartOutline, IoHeartSharp } from "react-icons/io5";
 
 const ProductCard = ({
   id,
@@ -28,10 +32,49 @@ const ProductCard = ({
   thumbnail,
   product,
 }) => {
+  const [favoriteProduct, setFavoriteProduct] = useState(false);
+
   const dispatch = useDispatch();
+
+  const toast = useToast();
+  const toastIdRef = useRef();
+
+  const favorite = useSelector((state) => state.favoriteReducer);
+
   const addProduct = (product) => {
     dispatch(addToCart(product));
+    toastIdRef.current = toast({
+      status: "success",
+      isClosable: true,
+      description: "Додано до Кошику!",
+    });
   };
+
+  const addFavoriteProduct = (product) => {
+    if (favoriteProduct) {
+      dispatch(removeFromFavorite(product));
+      setFavoriteProduct(false);
+      toastIdRef.current = toast({
+        status: "success",
+        isClosable: true,
+        description: "Видалено з Побажань.",
+      });
+    } else {
+      dispatch(addToFavorite(product));
+      setFavoriteProduct(true);
+      toastIdRef.current = toast({
+        status: "success",
+        isClosable: true,
+        description: "Додано до Побажань!",
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (favorite.find((fav) => fav.id === product.id)) {
+      setFavoriteProduct(true);
+    }
+  }, [favorite, product]);
 
   return (
     <Box
@@ -91,6 +134,31 @@ const ProductCard = ({
               грн
             </Box>
           </Box>
+          <Tooltip
+            bg="white"
+            placement={"top"}
+            color={"#000"}
+            fontSize={"1.2em"}
+          >
+            <IconButton
+              onClick={() => addFavoriteProduct(product)}
+              color="#fff"
+              bgColor="transparent"
+              h={8}
+              w={8}
+              alignSelf={"center"}
+              icon={
+                favoriteProduct ? (
+                  <IoHeartSharp style={{ width: "1.5em", height: "1.5em" }} />
+                ) : (
+                  <IoHeartOutline style={{ width: "1.5em", height: "1.5em" }} />
+                )
+              }
+              _hover={{
+                color: "#f88654",
+              }}
+            />
+          </Tooltip>
           <Tooltip
             bg="white"
             placement={"top"}

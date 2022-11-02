@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import {
@@ -21,6 +21,7 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  useToast,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../actions/cartActions";
@@ -31,8 +32,17 @@ const Product = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
+
+  const toast = useToast();
+  const toastIdRef = useRef();
+
   const addProduct = (product) => {
     dispatch(addToCart(product));
+    toastIdRef.current = toast({
+      status: "success",
+      isClosable: true,
+      description: "Додано до Кошику!",
+    });
   };
 
   const [product, setProduct] = useState(state);
