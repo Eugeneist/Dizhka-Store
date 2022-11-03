@@ -8,6 +8,7 @@ import {
   Button,
   IconButton,
   useToast,
+  Image,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -82,17 +83,31 @@ const ProductCard = ({
       maxW="100%"
       maxH="100%"
       shadow="lg"
+      overflow={"hidden"}
       cursor={"pointer"}
       _hover={{
         bg: "#221D23",
       }}
     >
       <NavLink to={`/product/${product.id}`}>
-        <Box bgImage={thumbnail} height="400px" backgroundSize={"cover"} />
+        <Image
+          src={thumbnail}
+          alt="alcohol"
+          style={{
+            height: "400px",
+            backgroundSize: "cober",
+            backgroundPosition: "44% 50%",
+            transition: "all 0.5s",
+          }}
+          _hover={{
+            transform: "scale(1.1)",
+            transition: "all 0.5s",
+          }}
+        />
       </NavLink>
 
-      <Box p="6">
-        <Flex mt="1" pb="4" justifyContent="center" alignContent="center">
+      <Box p="6" zIndex={2}>
+        <Flex mt="1" pb="2" justifyContent="center" alignContent="center">
           <NavLink to={`/product/${product.id}`}>
             <Box
               fontSize="1.5rem"
@@ -106,12 +121,22 @@ const ProductCard = ({
           </NavLink>
         </Flex>
 
-        <Flex justifyContent="space-between" alignContent="center">
+        <Flex pb="2" justifyContent="center" alignContent="center">
+          <Box
+            fontSize="2xl"
+            fontWeight="bold"
+            color={useColorModeValue("#fff")}
+          >
+            {price} грн
+          </Box>
+        </Flex>
+        <Flex justifyContent="space-between" alignItems="center">
           <NavLink to={`/product/${id}`}>
             <Button
               color="#fff"
               bgColor="transparent"
               variant="ghost"
+              textTransform={"uppercase"}
               _hover={{
                 bg: "#221D23",
                 color: "#f88654",
@@ -124,16 +149,6 @@ const ProductCard = ({
               Огляд
             </Button>
           </NavLink>
-          <Box
-            fontSize="2xl"
-            fontWeight="bold"
-            color={useColorModeValue("#fff")}
-          >
-            {price}&nbsp;
-            <Box as="span" color={"#fff"} fontSize="xl">
-              грн
-            </Box>
-          </Box>
           <Tooltip
             bg="white"
             placement={"top"}
