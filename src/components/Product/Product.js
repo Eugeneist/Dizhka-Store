@@ -36,6 +36,12 @@ const Product = () => {
   const toast = useToast();
   const toastIdRef = useRef();
 
+  const [product, setProduct] = useState(state);
+
+  useEffect(() => {
+    setProduct(state[id - 1]);
+  }, [id, state]);
+
   const addProduct = (product) => {
     dispatch(addToCart(product));
     toastIdRef.current = toast({
@@ -44,8 +50,6 @@ const Product = () => {
       description: "Додано до Кошику!",
     });
   };
-
-  const [product, setProduct] = useState(state);
 
   // useEffect(() => {
   //   const filteredList = state.filter((x) => x.id === id);
@@ -63,7 +67,7 @@ const Product = () => {
           <Image
             rounded={"md"}
             alt={"product image"}
-            src={state[id - 1].thumbnail}
+            src={product.thumbnail}
             fit={"cover"}
             align={"center"}
             w={"100%"}
@@ -77,14 +81,14 @@ const Product = () => {
               fontWeight={600}
               fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
             >
-              {state[id - 1].title}
+              {product.title}
             </Heading>
             <Text
               color={useColorModeValue("gray.900", "gray.400")}
               fontWeight={300}
               fontSize={"2xl"}
             >
-              {state[id - 1].price} ГРН
+              {product.price} ГРН
             </Text>
           </Box>
 
@@ -103,7 +107,7 @@ const Product = () => {
                 fontSize={"2xl"}
                 fontWeight={"300"}
               >
-                {state[id - 1].descriptionTitle}
+                {product.descriptionTitle}
               </Text>
               <Tabs isFitted variant="enclosed">
                 <TabList>
@@ -112,10 +116,10 @@ const Product = () => {
                 </TabList>
                 <TabPanels>
                   <TabPanel>
-                    <Text fontSize={"lg"}>{state[id - 1].description}</Text>
+                    <Text fontSize={"lg"}>{product.description}</Text>
                   </TabPanel>
                   <TabPanel>
-                    <Text fontSize={"lg"}>{state[id - 1].review}</Text>
+                    <Text fontSize={"lg"}>{product.review}</Text>
                   </TabPanel>
                 </TabPanels>
               </Tabs>
@@ -134,7 +138,7 @@ const Product = () => {
               <List spacing={2}>
                 <ListItem>
                   <Text as={"span"} fontWeight={"bold"}>
-                    {state[id - 1].details}
+                    {product.details}
                   </Text>
                 </ListItem>
               </List>

@@ -48,6 +48,7 @@ const CartItem = ({
       direction={{ base: "column", md: "row" }}
       justify="space-between"
       align="center"
+      pb={200}
     >
       <CartProductMeta
         name={title}
@@ -92,7 +93,7 @@ const CartItem = ({
           variant="solid"
           onClick={() => deleteProduct(product)}
         >
-          Delete
+          Видалити
         </Button>
         <Box>
           <Text>{(price * amount).toFixed(2)} ГРН</Text>

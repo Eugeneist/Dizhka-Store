@@ -146,7 +146,7 @@ const Cart = () => {
           <HStack mt="6" fontWeight="semibold">
             <p>чи</p>
             <NavLink to={`/store`}>
-              <Link color={mode("blue.500", "blue.200")}>
+              <Link color={mode("gray.600", "gray.400")}>
                 Повернутися до Лавки
               </Link>
             </NavLink>
