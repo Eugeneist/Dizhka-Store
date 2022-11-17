@@ -30,15 +30,27 @@ html {
   height: 100vh;
 }
 
-
 .product__btn{
-  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.5);  
+  cursor: pointer;
   transition: all ease 0.6s;
 }
 
 .product__btn:hover{
+  background: rgb(0, 0, 0);  
   cursor: pointer;
-  opacity: 1;
+  transition: all ease 0.6s;
+}
+
+.product__btn_orange{
+  background: rgba(248,134,84, 0.5);  
+  cursor: pointer;
+  transition: all ease 0.6s;
+}
+
+.product__btn_orange:hover{
+  background: rgb(248,134,84);  
+  cursor: pointer;
   transition: all ease 0.6s;
 }
 

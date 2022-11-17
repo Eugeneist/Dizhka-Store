@@ -12,3 +12,6 @@ export { ScrollToTop } from "./ScrollToTop";
 export { Cart } from "./Cart";
 export { FavoriteList } from "./FavoriteList";
 export { Contacts } from "./Contacts";
+export { PresentationItem } from "./PresentationItem";
+export { CallToAction } from "./CallToAction";
+export { Error } from "./Error";
