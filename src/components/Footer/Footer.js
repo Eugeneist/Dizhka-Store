@@ -46,7 +46,7 @@ const Footer = () => {
                 }}
                 textTransform="uppercase"
               >
-                Домашня сторінка
+                Головна сторінка
               </Link>
             </NavLink>
             <NavLink to="/store">

@@ -9,7 +9,6 @@ import {
   useDisclosure,
   useColorModeValue,
   Badge,
-  VisuallyHidden,
 } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
@@ -81,7 +80,7 @@ const NavBar = () => {
                     transition: "all ease 0.3s",
                   }}
                 >
-                  ДОМАШНЯ
+                  ГОЛОВНА
                 </Link>
               </NavLink>
               <NavLink to="/store">

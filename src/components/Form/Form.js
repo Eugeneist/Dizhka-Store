@@ -141,7 +141,6 @@ const Form = () => {
                 _hover={{
                   bg: "#000",
                 }}
-                isFullWidth
               >
                 Надіслати повідомлення
               </Button>

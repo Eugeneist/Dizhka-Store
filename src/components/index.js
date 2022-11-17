@@ -15,3 +15,5 @@ export { Contacts } from "./Contacts";
 export { PresentationItem } from "./PresentationItem";
 export { CallToAction } from "./CallToAction";
 export { Error } from "./Error";
+export { ProductFilter } from "./ProductFilter";
+export { FilterIcons } from "./FilterIcons";

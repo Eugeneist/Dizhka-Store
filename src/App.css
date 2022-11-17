@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 
-
 @font-face {
   font-family: KTFJermilov;
   src: url(./assets/fonts/KTFJermilov-Solid.ttf);
@@ -54,6 +53,19 @@ html {
   transition: all ease 0.6s;
 }
 
+.filter_item{
+  fill:#fff;
+}
+
+.filter_box:hover .filter_circle{
+  fill:rgb(248,134,84);
+  transition: "all ease 0.4s";
+}
+
+.filter_box:active .filter_circle{
+  fill:rgb(223, 38, 10);
+  transition: "all ease 0.4s";
+}
 
 
 @media (max-width: 1450px) {
