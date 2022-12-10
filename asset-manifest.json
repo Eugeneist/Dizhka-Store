@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/Dizhka-Store/static/css/main.63865f1f.css",
-    "main.js": "/Dizhka-Store/static/js/main.c28543c2.js",
+    "main.css": "/Dizhka-Store/static/css/main.cd57f625.css",
+    "main.js": "/Dizhka-Store/static/js/main.b7af6fbc.js",
     "static/js/787.e9a1622a.chunk.js": "/Dizhka-Store/static/js/787.e9a1622a.chunk.js",
     "static/media/bg_front.png": "/Dizhka-Store/static/media/bg_front.e94639f2cda609e11d8f.png",
     "static/media/divider02.jpg": "/Dizhka-Store/static/media/divider02.d5b4d736b81adc875ee1.jpg",
     "static/media/divider_tablet.jpg": "/Dizhka-Store/static/media/divider_tablet.506c3f7a110c3a86d786.jpg",
     "static/media/bg_beer.jpg": "/Dizhka-Store/static/media/bg_beer.7ab68a1801c3fde6350c.jpg",
     "static/media/vodka.jpg": "/Dizhka-Store/static/media/vodka.46ff6c88e57d84f29b1a.jpg",
-    "static/media/all_hover.png": "/Dizhka-Store/static/media/all_hover.f3a1c08923081f610608.png",
-    "static/media/all.png": "/Dizhka-Store/static/media/all.3ddd3248b62b1f3f1f28.png",
     "static/media/bg_whiskey.jpg": "/Dizhka-Store/static/media/bg_whiskey.945c254df5b61841bc60.jpg",
     "static/media/flag.png": "/Dizhka-Store/static/media/flag.1f34971b22e192b5c203.png",
     "static/media/gin.jpg": "/Dizhka-Store/static/media/gin.4afd2e5ae2b45490bfde.jpg",
+    "static/media/favorite_empty.png": "/Dizhka-Store/static/media/favorite_empty.5d12e942bc81ce8ca986.png",
     "static/media/404.png": "/Dizhka-Store/static/media/404.1467841128b78a01b000.png",
     "static/media/cart_empty.png": "/Dizhka-Store/static/media/cart_empty.6c85b0f94df858c8ace7.png",
     "static/media/bg.jpg": "/Dizhka-Store/static/media/bg.b6f8248361127e77a257.jpg",
@@ -20,25 +19,17 @@
     "static/media/bg_vodka.jpg": "/Dizhka-Store/static/media/bg_vodka.575ff812cbae7dbb2e01.jpg",
     "static/media/bg_about.jpg": "/Dizhka-Store/static/media/bg_about.9c09a86b9853c35050fc.jpg",
     "static/media/map.png": "/Dizhka-Store/static/media/map.b17b21c7ae2964c86ec3.png",
-    "static/media/vodka.png": "/Dizhka-Store/static/media/vodka.17cd256b0c3c54428b0e.png",
-    "static/media/gin.png": "/Dizhka-Store/static/media/gin.75b26c09c403eedc564b.png",
-    "static/media/whiskey.png": "/Dizhka-Store/static/media/whiskey.a1d74a6e722925551d8f.png",
-    "static/media/beer.png": "/Dizhka-Store/static/media/beer.c0b6abe5958c67ae6fbd.png",
     "static/media/bg_gin.jpg": "/Dizhka-Store/static/media/bg_gin.36956dff3411d5cffade.jpg",
     "static/media/whiskey.jpg": "/Dizhka-Store/static/media/whiskey.4b9e699b6c29bfcdbb87.jpg",
     "static/media/KTFJermilov-Solid.ttf": "/Dizhka-Store/static/media/KTFJermilov-Solid.d2a35dfd7e098e0aa5e0.ttf",
-    "static/media/gin_hover.png": "/Dizhka-Store/static/media/gin_hover.cdee84731f31ece22057.png",
-    "static/media/vodka_hover.png": "/Dizhka-Store/static/media/vodka_hover.6a71697faa5750f86887.png",
-    "static/media/whiskey_hover.png": "/Dizhka-Store/static/media/whiskey_hover.fc74d88d7f88231f4921.png",
-    "static/media/beer_hover.png": "/Dizhka-Store/static/media/beer_hover.917f61d7f0b0e132e70a.png",
     "static/media/loader.png": "/Dizhka-Store/static/media/loader.eed219da06ff76e54932.png",
     "index.html": "/Dizhka-Store/index.html",
-    "main.63865f1f.css.map": "/Dizhka-Store/static/css/main.63865f1f.css.map",
-    "main.c28543c2.js.map": "/Dizhka-Store/static/js/main.c28543c2.js.map",
+    "main.cd57f625.css.map": "/Dizhka-Store/static/css/main.cd57f625.css.map",
+    "main.b7af6fbc.js.map": "/Dizhka-Store/static/js/main.b7af6fbc.js.map",
     "787.e9a1622a.chunk.js.map": "/Dizhka-Store/static/js/787.e9a1622a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.63865f1f.css",
-    "static/js/main.c28543c2.js"
+    "static/css/main.cd57f625.css",
+    "static/js/main.b7af6fbc.js"
   ]
 }
