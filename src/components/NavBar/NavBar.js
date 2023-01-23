@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { TiShoppingCart, TiHeartFullOutline } from "react-icons/ti";
+import { useScreenWidth } from "../../hooks";
 import { Logo } from "../Logo";
 import "../../App.css";
 
@@ -34,12 +35,12 @@ const NavBar = () => {
   const cart = useSelector((state) => state.cartReducer);
   const favorite = useSelector((state) => state.favoriteReducer);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const tablet = useScreenWidth();
 
   return (
     <>
       <Grid
         alignItems={"center"}
-        height={"80px"}
         position={"sticky"}
         top={"0"}
         bg={useColorModeValue("black")}
@@ -49,16 +50,36 @@ const NavBar = () => {
       >
         <Grid
           h={16}
+          height={"80px"}
           alignItems={"center"}
           justifyContent={"space-between"}
           templateColumns={"1fr 42px 1fr"}
+          backgroundColor={"#000"}
         >
           <GridItem>
             <IconButton
-              size={"md"}
-              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+              width={"50px"}
+              height={"50px"}
+              backgroundColor={"#000"}
+              icon={
+                isOpen ? (
+                  <CloseIcon
+                    width={"35px"}
+                    height={"35px"}
+                    backgroundColor={"#000"}
+                    color={"#fff"}
+                  />
+                ) : (
+                  <HamburgerIcon
+                    backgroundColor={"#000"}
+                    color={"#fff"}
+                    width={"45px"}
+                    height={"45px"}
+                  />
+                )
+              }
               aria-label={"Open Menu"}
-              display={{ md: "none" }}
+              display={{ lg: "none" }}
               onClick={isOpen ? onClose : onOpen}
             />
             <HStack
@@ -66,7 +87,7 @@ const NavBar = () => {
               spacing={4}
               fontSize="1rem"
               fontFamily="'Montserrat', sans-serif"
-              display={{ base: "none", md: "flex" }}
+              display={{ base: "none", lg: "flex" }}
             >
               <NavLink to="/">
                 <Link
@@ -124,11 +145,7 @@ const NavBar = () => {
           </GridItem>
           <GridItem>
             <Flex alignItems={"center"} flexDirection={"row-reverse"}>
-              <HStack
-                as={"nav"}
-                spacing={4}
-                display={{ base: "none", md: "flex" }}
-              >
+              <HStack as={"nav"} spacing={4} display="flex">
                 <NavLink to="/favorite">
                   <Link
                     alignItems={"center"}
@@ -142,9 +159,17 @@ const NavBar = () => {
                     }}
                     href={"#"}
                   >
-                    <Icon as={TiHeartFullOutline} w={7} h={7} />
+                    <Icon
+                      as={TiHeartFullOutline}
+                      w={tablet ? "30px" : "7"}
+                      h={tablet ? "30px" : "7"}
+                    />
                     {favorite.length > 0 ? (
-                      <Badge variant="solid" bgColor={"#f88654"}>
+                      <Badge
+                        variant="solid"
+                        bgColor={"#f88654"}
+                        fontSize="11px"
+                      >
                         {favorite.length}
                       </Badge>
                     ) : (
@@ -171,9 +196,17 @@ const NavBar = () => {
                     }}
                     href={"#"}
                   >
-                    <Icon as={TiShoppingCart} w={7} h={7} />
+                    <Icon
+                      as={TiShoppingCart}
+                      w={tablet ? "30px" : "7"}
+                      h={tablet ? "30px" : "7"}
+                    />
                     {cart.length > 0 ? (
-                      <Badge variant="solid" bgColor={"#f88654"}>
+                      <Badge
+                        fontSize="11px"
+                        variant="solid"
+                        bgColor={"#f88654"}
+                      >
                         {cart.length}
                       </Badge>
                     ) : (

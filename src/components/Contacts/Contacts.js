@@ -1,4 +1,4 @@
-import { Container, SectionInner } from "../../styles/Styles";
+import { Container, SectionInner } from '../../styles/Styles';
 import {
   Flex,
   Image,
@@ -8,56 +8,73 @@ import {
   Tooltip,
   useColorModeValue,
   useClipboard,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { BsTelegram } from "react-icons/bs";
-import { GrInstagram } from "react-icons/gr";
-import { MdEmail } from "react-icons/md";
-import "../../App.css";
+import { BsTelegram } from 'react-icons/bs';
+import { GrInstagram } from 'react-icons/gr';
+import { MdEmail } from 'react-icons/md';
+import '../../App.css';
 
-import map from "../../assets/images/map.png";
-import flag from "../../assets/images/flag.png";
+import map from '../../assets/images/map.png';
+import flag from '../../assets/images/flag.png';
 
 const Contacts = () => {
-  const { hasCopied, onCopy } = useClipboard("example@example.com");
+  const { hasCopied, onCopy } = useClipboard('example@example.com');
 
   return (
     <Container
       style={{
-        backgroundColor: "#000",
-        color: "#fff",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "start",
+        height: '100vh',
+        backgroundColor: '#000',
+        color: '#fff',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'start',
       }}
     >
       <SectionInner>
-        <Flex align={"center"} pb={50}>
-          <Image width={"50%"} height={"50%"} src={map} alt="map" />
-          <Image pl={20} width={"50%"} height={"50%"} src={flag} alt="flag" />
+        <Flex
+          direction={{ base: 'column', md: 'column', lg: 'row' }}
+          align={'center'}
+          pb={50}
+        >
+          <Image
+            width={{ base: '100%', md: '50%', lg: '50%' }}
+            height={{ base: '100%', md: '50%', lg: '50%' }}
+            pb={{ base: '50', md: '5', lg: '5' }}
+            src={map}
+            alt="map"
+          />
+          <Image
+            pl={20}
+            width={{ base: '100%', md: '50%', lg: '50%' }}
+            height={{ base: '100%', md: '50%', lg: '50%' }}
+            src={flag}
+            alt="flag"
+          />
         </Flex>
         <Stack
-          width={"40%"}
+          width={{ base: '70%', md: '40%', lg: '40%' }}
           align="center"
           justify="space-around"
-          margin={"0 auto"}
-          direction={"row"}
+          margin={'0 auto'}
+          direction={'row'}
         >
           <Tooltip
-            label={hasCopied ? "Email скопійовано!" : "Скопіювати Email"}
+            label={hasCopied ? 'Email скопійовано!' : 'Скопіювати Email'}
             closeOnClick={false}
             hasArrow
           >
             <IconButton
               aria-label="email"
-              bgColor={"#000"}
+              bgColor={'#000'}
               size="lg"
               fontSize="3xl"
-              icon={<MdEmail />}
+              icon={<MdEmail size="28px" />}
               _hover={{
-                bg: "#f88654",
-                color: useColorModeValue("white", "gray.700"),
+                bg: '#f88654',
+                color: useColorModeValue('white', 'gray.700'),
               }}
               onClick={onCopy}
               isRound
@@ -67,13 +84,13 @@ const Contacts = () => {
           <Link href="tg://resolve?domain=nickname" isExternal>
             <IconButton
               aria-label="telegram"
-              bgColor={"#000"}
+              bgColor={'#000'}
               size="lg"
               fontSize="3xl"
-              icon={<BsTelegram />}
+              icon={<BsTelegram size="28px" />}
               _hover={{
-                bg: "#f88654",
-                color: useColorModeValue("white", "gray.700"),
+                bg: '#f88654',
+                color: useColorModeValue('white', 'gray.700'),
               }}
               isRound
             />
@@ -82,12 +99,12 @@ const Contacts = () => {
           <Link href="https://www.instagram.com/nickname" isExternal>
             <IconButton
               aria-label="instagram"
-              bgColor={"#000"}
+              bgColor={'#000'}
               size="lg"
               icon={<GrInstagram size="28px" />}
               _hover={{
-                bg: "#f88654",
-                color: useColorModeValue("white", "gray.700"),
+                bg: '#f88654',
+                color: useColorModeValue('white', 'gray.700'),
               }}
               isRound
             />

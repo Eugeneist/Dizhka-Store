@@ -8,24 +8,27 @@ import {
   Text,
   Button,
   useColorModeValue as mode,
-} from "@chakra-ui/react";
-import { TiShoppingCart } from "react-icons/ti";
-import { useSelector, useDispatch } from "react-redux";
+} from '@chakra-ui/react';
+import { TiShoppingCart } from 'react-icons/ti';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   removeFromCart,
   addToCart,
   deleteFromCart,
   clearCart,
-} from "../../actions/cartActions";
-import { NavLink } from "react-router-dom";
-import { Container } from "../../styles/Styles";
-import { CartItem } from "./CartItem";
-import { CartOrderSummary } from "./CartOrderSummary";
+} from '../../actions/cartActions';
+import { NavLink } from 'react-router-dom';
+import { Container } from '../../styles/Styles';
+import { CartItem } from './CartItem';
+import { CartOrderSummary } from './CartOrderSummary';
+import { useScreenWidth } from '../../hooks';
 
-import cart_empty from "../../assets/images/cart_empty.png";
+import cart_empty from '../../assets/images/cart_empty.png';
 
 const Cart = () => {
   const state = useSelector((state) => state.cartReducer);
+
+  const tablet = useScreenWidth();
 
   const calculateTotal = state
     .reduce((acc, product) => acc + product.amount * product.price, 0)
@@ -49,9 +52,22 @@ const Cart = () => {
     dispatch(clearCart(product));
   };
 
-  let finalWordA = "позиція";
-  let finalWordB = "позиції";
-  let finalWordC = "позицій";
+  const getOrderMessage = (cart) => {
+    let stringOrder = [];
+
+    for (let i = 0; i < cart.length; i++) {
+      stringOrder.push([
+        cart[i].title + ':' + ' ' + cart[i].amount + ' ' + 'bottles',
+      ]);
+    }
+    return stringOrder.join('; ');
+  };
+
+  let orderMessage = getOrderMessage(state);
+
+  let finalWordA = 'позиція';
+  let finalWordB = 'позиції';
+  let finalWordC = 'позицій';
   let message;
 
   if (state.length === 1 || state.length % 10 === 1) {
@@ -75,31 +91,37 @@ const Cart = () => {
       <Container
         bgImage={cart_empty}
         style={{
-          height: "100vh",
-          backgroundColor: "#000",
-          color: "#fff",
-          backgroundSize: "40%",
-          backgroundPosition: "center",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "start",
+          height: '100vh',
+          backgroundColor: '#000',
+          color: '#fff',
+          backgroundSize: tablet ? '100%' : '40%',
+          backgroundPosition: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'start',
         }}
       >
-        <Text fontSize="1.5rem" fontFamily="'Montserrat', sans-serif" pb={25}>
+        <Text
+          fontSize={{ base: '3rem', md: '1.5rem', lg: '1.5rem' }}
+          fontFamily="'Montserrat', sans-serif"
+          pb={25}
+        >
           Кошик порожній! Давай заповнювати!
         </Text>
         <NavLink to="/store">
           <Button
             leftIcon={<TiShoppingCart />}
+            fontSize={{ base: '3rem', md: '1rem', lg: '1rem' }}
+            height={{ base: '10rem', md: '2.5rem', lg: '2.5rem' }}
             color="#fff"
             bgColor="#f88654"
             variant="solid"
-            py={"7"}
-            px={"7"}
+            py={'7'}
+            px={{ base: '12', md: '7', lg: '7' }}
             _hover={{
-              bgColor: "#fff",
-              color: "#000",
+              bgColor: '#fff',
+              color: '#000',
             }}
           >
             ДО ЛАВКИ!
@@ -111,17 +133,17 @@ const Cart = () => {
 
   return (
     <Box
-      maxW={{ base: "3xl", lg: "7xl" }}
+      maxW={{ base: '3xl', lg: '7xl' }}
       mx="auto"
-      px={{ base: "4", md: "8", lg: "12" }}
-      py={{ base: "10", md: "14", lg: "16" }}
+      px={{ base: '4', md: '8', lg: '12' }}
+      py={{ base: '10', md: '14', lg: '16' }}
     >
       <Stack
-        direction={{ base: "column", lg: "row" }}
-        align={{ lg: "flex-start" }}
-        spacing={{ base: "8", md: "16" }}
+        direction={{ base: 'column', lg: 'row' }}
+        align={{ lg: 'flex-start' }}
+        spacing={{ base: '8', md: '16' }}
       >
-        <Stack spacing={{ base: "8", md: "10" }} flex="2">
+        <Stack spacing={{ base: '8', md: '10' }} flex="2">
           <Heading fontSize="2xl" fontWeight="extrabold">
             Твій кошик ({state.length} {message})
           </Heading>
@@ -142,11 +164,15 @@ const Cart = () => {
         </Stack>
 
         <Flex direction="column" align="center" flex="1">
-          <CartOrderSummary calculateTotal={calculateTotal} />
+          <CartOrderSummary
+            products={orderMessage}
+            clearCart={clearAllCart}
+            calculateTotal={calculateTotal}
+          />
           <HStack mt="6" fontWeight="semibold">
             <p>чи</p>
             <NavLink to={`/store`}>
-              <Link color={mode("gray.600", "gray.400")}>
+              <Link color={mode('gray.600', 'gray.400')}>
                 Повернутися до Лавки
               </Link>
             </NavLink>

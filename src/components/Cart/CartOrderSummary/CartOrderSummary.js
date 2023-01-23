@@ -1,7 +1,18 @@
-import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
-import { FaArrowRight } from "react-icons/fa";
+import {
+  Button,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { FaArrowRight } from 'react-icons/fa';
+import { ModalComponent } from '../../ModalComponent';
+import { OrderForm } from '../../OrderForm';
 
-const CartOrderSummary = ({ calculateTotal }) => {
+const CartOrderSummary = ({ products, calculateTotal, clearCart }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
       <Heading size="md">Загальне замовлення</Heading>
@@ -15,20 +26,34 @@ const CartOrderSummary = ({ calculateTotal }) => {
         </Flex>
       </Stack>
       <Button
+        onClick={onOpen}
         bgColor="#f88654"
         color="#fff"
         size="lg"
         fontSize="md"
-        transition={"all ease 0.3s"}
+        transition={'all ease 0.3s'}
         rightIcon={<FaArrowRight />}
         _hover={{
-          bgColor: "#000",
-          color: "#fff",
-          transition: "all ease 0.3s",
+          bgColor: '#000',
+          color: '#fff',
+          transition: 'all ease 0.3s',
         }}
       >
         Оформити замовлення
       </Button>
+      <ModalComponent
+        isOpen={isOpen}
+        onClose={onClose}
+        title="Ваше замовлення"
+        size={'2xl'}
+        form={'orderForm'}
+      >
+        <OrderForm
+          products={products}
+          totalPrice={calculateTotal}
+          clearCart={clearCart}
+        />
+      </ModalComponent>
     </Stack>
   );
 };

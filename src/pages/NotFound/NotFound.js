@@ -1,7 +1,7 @@
-import { Container, SectionInner } from "../../styles/Styles";
-import { NavBar, Footer } from "../../components";
+import { Container, SectionInner } from '../../styles/Styles';
+import { NavBar } from '../../components';
 
-import error404 from "../../assets/images/404.png";
+import error404 from '../../assets/images/404.png';
 
 const NotFound = () => {
   return (
@@ -10,11 +10,11 @@ const NotFound = () => {
       <Container
         bgImage={error404}
         style={{
-          height: "100vh",
-          backgroundColor: "#000",
-          color: "#fff",
-          backgroundSize: "40%",
-          backgroundPosition: "center",
+          height: '100vh',
+          backgroundColor: '#000',
+          color: '#fff',
+          backgroundSize: '40%',
+          backgroundPosition: 'center',
         }}
       >
         <SectionInner></SectionInner>

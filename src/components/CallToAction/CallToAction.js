@@ -1,9 +1,12 @@
 import { Text, Heading, Flex, Button } from "@chakra-ui/react";
 import { TiShoppingCart } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
+import { useScreenWidth } from "../../hooks";
 import { SectionContainer, SectionInner } from "../../styles/Styles";
 
 const CallToAction = () => {
+  const tablet = useScreenWidth();
+
   return (
     <SectionContainer
       style={{
@@ -14,11 +17,11 @@ const CallToAction = () => {
       }}
     >
       <SectionInner style={{ margin: 0, maxWidth: "none" }}>
-        <Flex direction={"column"}>
+        <Flex direction={"column"} maxWidth="none">
           <Heading
             className="parallax__title"
             fontFamily="KTFJermilov, sans-serif"
-            fontSize="6.25rem"
+            fontSize={tablet ? "18rem" : "6.25rem"}
             fontWeight="normal"
             cursor="pointer"
             pb={"20"}
@@ -29,7 +32,7 @@ const CallToAction = () => {
           <Text
             fontFamily="'Montserrat', sans-serif"
             textTransform={"uppercase"}
-            fontSize="3rem"
+            fontSize={tablet ? "7rem" : "3rem"}
             color={"#fff"}
             pb={10}
           >
@@ -38,7 +41,7 @@ const CallToAction = () => {
           <Text
             fontFamily="'Montserrat', sans-serif"
             textTransform={"uppercase"}
-            fontSize="1.5rem"
+            fontSize={tablet ? "4rem" : "1.5rem"}
             color={"#fff"}
             pb={1}
           >
@@ -47,7 +50,7 @@ const CallToAction = () => {
           <Text
             fontFamily="'Montserrat', sans-serif"
             textTransform={"uppercase"}
-            fontSize="1.5rem"
+            fontSize={tablet ? "4rem" : "1.5rem"}
             color={"#fff"}
             pb={1}
           >
@@ -57,7 +60,7 @@ const CallToAction = () => {
             <Text
               fontFamily="'Montserrat', sans-serif"
               textTransform={"uppercase"}
-              fontSize="1.5rem"
+              fontSize={tablet ? "4rem" : "1.5rem"}
               color={"#fff"}
               pb={20}
             >
@@ -69,8 +72,9 @@ const CallToAction = () => {
                 color="#fff"
                 bgColor="#f88654"
                 variant="solid"
-                py={"7"}
-                px={"7"}
+                fontSize={tablet ? "4rem" : "1rem"}
+                py={tablet ? "20" : "7"}
+                px={tablet ? "25" : "7"}
                 _hover={{
                   bgColor: "#fff",
                   color: "#000",
