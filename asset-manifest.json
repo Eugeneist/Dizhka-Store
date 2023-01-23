@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Dizhka-Store/static/css/main.cd57f625.css",
-    "main.js": "/Dizhka-Store/static/js/main.b7af6fbc.js",
+    "main.js": "/Dizhka-Store/static/js/main.c529bfaf.js",
     "static/js/787.e9a1622a.chunk.js": "/Dizhka-Store/static/js/787.e9a1622a.chunk.js",
     "static/media/bg_front.png": "/Dizhka-Store/static/media/bg_front.e94639f2cda609e11d8f.png",
     "static/media/divider02.jpg": "/Dizhka-Store/static/media/divider02.d5b4d736b81adc875ee1.jpg",
@@ -25,11 +25,11 @@
     "static/media/loader.png": "/Dizhka-Store/static/media/loader.eed219da06ff76e54932.png",
     "index.html": "/Dizhka-Store/index.html",
     "main.cd57f625.css.map": "/Dizhka-Store/static/css/main.cd57f625.css.map",
-    "main.b7af6fbc.js.map": "/Dizhka-Store/static/js/main.b7af6fbc.js.map",
+    "main.c529bfaf.js.map": "/Dizhka-Store/static/js/main.c529bfaf.js.map",
     "787.e9a1622a.chunk.js.map": "/Dizhka-Store/static/js/787.e9a1622a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd57f625.css",
-    "static/js/main.b7af6fbc.js"
+    "static/js/main.c529bfaf.js"
   ]
 }
