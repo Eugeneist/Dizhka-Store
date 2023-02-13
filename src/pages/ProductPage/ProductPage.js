@@ -1,4 +1,4 @@
-import { Product, NavBar, Footer } from "../../components";
+import { Product, NavBar, Footer } from '../../components';
 
 const ProductPage = () => {
   return (

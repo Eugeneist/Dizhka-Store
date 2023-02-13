@@ -30,7 +30,8 @@ const Contacts = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'start',
+        justifyContent: 'center',
+        padding: '300px 40px',
       }}
     >
       <SectionInner>

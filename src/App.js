@@ -1,6 +1,6 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Routes, Route } from "react-router-dom";
+import { ChakraProvider } from '@chakra-ui/react';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { Routes, Route } from 'react-router-dom';
 import {
   HomePage,
   StorePage,
@@ -9,7 +9,7 @@ import {
   CartPage,
   ProductPage,
   NotFound,
-} from "./pages";
+} from './pages';
 
 function App() {
   return (

@@ -21,67 +21,79 @@ const Footer = () => {
     <Box bg="#000">
       <Divider w="100%" mx="auto" color="#f88654" h="3.5px" />
       <Stack
-        direction={{ base: 'column', lg: 'row' }}
+        direction={{ base: 'row', lg: 'row' }}
         w="full"
         justify="space-between"
         p={10}
       >
-        <NavLink to="/">
+        <NavLink style={{ paddingTop: '15px' }} to="/">
           <Logo width={'50%'} height={'51%'} />
         </NavLink>
+
         <HStack
           alignItems="start"
           flex={1}
           justify="end"
-          fontSize={{ base: '12px', md: '16px' }}
+          fontSize={{ base: '12px', md: '16px', lg: '14px' }}
           color="#fff"
           textAlign={{ base: 'center', md: 'left' }}
         >
           <Flex justify="start" direction="column">
-            <Text fontWeight={'bold'} textTransform="uppercase">
+            <Text
+              pb={{ base: '15px', md: '15px', lg: '6px' }}
+              fontWeight={'bold'}
+              textTransform="uppercase"
+            >
               Карта сайту
             </Text>
-            <NavLink to="/">
-              <Link
-                _hover={{
-                  color: '#f88654',
-                }}
-                textTransform="uppercase"
-              >
-                Головна сторінка
-              </Link>
-            </NavLink>
-            <NavLink to="/store">
-              <Link
-                _hover={{
-                  color: '#f88654',
-                }}
-                textTransform="uppercase"
-              >
-                Лавка
-              </Link>
-            </NavLink>
-            <NavLink to="/contacts">
-              <Link
-                _hover={{
-                  color: '#f88654',
-                }}
-                textTransform="uppercase"
-              >
-                Контакти
-              </Link>
-            </NavLink>
+            <Box pb={{ base: '10px', md: '10px', lg: '3px' }}>
+              <NavLink to="/">
+                <Link
+                  _hover={{
+                    color: '#f88654',
+                  }}
+                  textTransform="uppercase"
+                >
+                  Головна сторінка
+                </Link>
+              </NavLink>
+            </Box>
+            <Box pb={{ base: '10px', md: '10px', lg: '3px' }}>
+              <NavLink to="/store">
+                <Link
+                  _hover={{
+                    color: '#f88654',
+                  }}
+                  textTransform="uppercase"
+                >
+                  Лавка
+                </Link>
+              </NavLink>
+            </Box>
+            <Box pb={{ base: '10px', md: '10px', lg: '3px' }}>
+              <NavLink to="/contacts">
+                <Link
+                  _hover={{
+                    color: '#f88654',
+                  }}
+                  textTransform="uppercase"
+                >
+                  Контакти
+                </Link>
+              </NavLink>
+            </Box>
           </Flex>
         </HStack>
       </Stack>
       <Divider w="25%" mx="auto" color="#f88654" h="3.5px" />
-      <VStack py={3}>
-        <HStack justify="center">
+      <VStack py={{ base: '10', md: '5', lg: '2' }}>
+        <HStack pb={{ base: '10' }} justify="center">
           <Link href="tg://resolve?domain=nickname" isExternal>
             <Icon
               _hover={{
                 color: '#f88654',
               }}
+              mx={{ base: '10', md: '1', lg: '1' }}
               color="#fff"
               h="20px"
               w="20px"
@@ -100,7 +112,11 @@ const Footer = () => {
             />
           </Link>
         </HStack>
-        <Text textAlign="center" fontSize="smaller" color="white">
+        <Text
+          textAlign="center"
+          fontSize={{ base: '3rem', md: 'smaller', lg: 'smaller' }}
+          color="white"
+        >
           &copy;Copyright,{currentYear}. All rights reserved.
         </Text>
       </VStack>

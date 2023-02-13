@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const toRem = (value) => `${value / 16}rem`;
 
@@ -67,5 +67,92 @@ export const LoaderImage = styled.img`
     to {
       transform: rotate(360deg);
     }
+  }
+`;
+
+export const FormContainer = styled.form`
+  text-align: start;
+`;
+
+export const FormLabel = styled.label`
+  font-size: 4rem;
+  font-weight: bold;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 1rem;
+  }
+`;
+
+export const FormInput = styled.input`
+  width: 100%;
+  min-width: 100%;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 7px 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 3rem
+  height: 50px;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    height: 60px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 1rem;
+    height: 40px;
+  }
+`;
+
+export const FormSelect = styled.select`
+  width: 100%;
+  min-width: 100%;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 3rem
+  height: 50px;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    height: 60px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 1rem;
+    height: 40px;
+  }
+`;
+
+export const FormTextarea = styled.textarea`
+  width: 100%;
+  min-width: 100%;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 7px 10px;
+  margin-top: 10px;
+  font-size: 3rem;
+  height: 150px;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    height: auto;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 1rem;
+    height: auto;
   }
 `;

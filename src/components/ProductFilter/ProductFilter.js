@@ -1,6 +1,6 @@
-import { Flex, Box } from "@chakra-ui/react";
-import { FilterIcons } from "../FilterIcons";
-import "../../App.css";
+import { Flex, Box } from '@chakra-ui/react';
+import { FilterIcons } from '../FilterIcons';
+import '../../App.css';
 
 const ProductFilter = ({ state, setFilter }) => {
   const filterProducts = (category) => {
@@ -9,56 +9,76 @@ const ProductFilter = ({ state, setFilter }) => {
   };
 
   return (
-    <Flex gap={10} alignItems={"center"} justifyContent={"center"} pb={50}>
+    <Flex
+      display={{
+        base: 'none',
+        md: 'flex',
+        lg: 'flex',
+      }}
+      gap={10}
+      direction={{
+        base: 'column',
+        md: 'row',
+        lg: 'row',
+      }}
+      alignItems={'center'}
+      justifyContent={'center'}
+      pb={50}
+      pr={{
+        base: '30px',
+        md: 'none',
+        lg: 'none',
+      }}
+    >
       <Box
         onClick={() => setFilter(state)}
-        width={"100px"}
-        height={"100px"}
-        cursor={"pointer"}
+        width={{ base: '100px', md: '90px', lg: '100px' }}
+        height={{ base: '100px', md: '90px', lg: '100px' }}
+        cursor={'pointer'}
         transition="all ease 0.4s"
         className="filter_box"
       >
-        <FilterIcons image={"all"} />
+        <FilterIcons image={'all'} />
       </Box>
       <Box
-        onClick={() => filterProducts("пиво")}
-        width={"100px"}
-        height={"100px"}
-        cursor={"pointer"}
+        onClick={() => filterProducts('пиво')}
+        width={{ base: '100px', md: '90px', lg: '100px' }}
+        height={{ base: '100px', md: '90px', lg: '100px' }}
+        cursor={'pointer'}
         className="filter_box"
         transition="all ease 0.4s"
       >
-        <FilterIcons image={"beer"} />
+        <FilterIcons image={'beer'} />
       </Box>
       <Box
-        onClick={() => filterProducts("джин")}
-        width={"100px"}
-        height={"100px"}
-        cursor={"pointer"}
+        onClick={() => filterProducts('джин')}
+        width={{ base: '100px', md: '90px', lg: '100px' }}
+        height={{ base: '100px', md: '90px', lg: '100px' }}
+        cursor={'pointer'}
         transition="all ease 0.4s"
         className="filter_box"
       >
-        <FilterIcons image={"gin"} />
+        <FilterIcons image={'gin'} />
       </Box>
       <Box
-        onClick={() => filterProducts("віскі")}
-        width={"100px"}
-        height={"100px"}
-        cursor={"pointer"}
+        onClick={() => filterProducts('віскі')}
+        width={{ base: '100px', md: '90px', lg: '100px' }}
+        height={{ base: '100px', md: '90px', lg: '100px' }}
+        cursor={'pointer'}
         transition="all ease 0.4s"
         className="filter_box"
       >
-        <FilterIcons image={"whiskey"} />
+        <FilterIcons image={'whiskey'} />
       </Box>
       <Box
-        onClick={() => filterProducts("горілка")}
-        width={"100px"}
-        height={"100px"}
-        cursor={"pointer"}
+        onClick={() => filterProducts('горілка')}
+        width={{ base: '100px', md: '90px', lg: '100px' }}
+        height={{ base: '100px', md: '90px', lg: '100px' }}
+        cursor={'pointer'}
         transition="all ease 0.4s"
         className="filter_box"
       >
-        <FilterIcons image={"vodka"} />
+        <FilterIcons image={'vodka'} />
       </Box>
     </Flex>
   );

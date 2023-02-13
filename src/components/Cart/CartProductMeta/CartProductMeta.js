@@ -4,7 +4,7 @@ import {
   Stack,
   Text,
   useColorModeValue as mode,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 const CartProductMeta = ({ name, image, description }) => {
   return (
@@ -21,8 +21,16 @@ const CartProductMeta = ({ name, image, description }) => {
       />
       <Box pt="4">
         <Stack spacing="0.5">
-          <Text fontWeight="medium">{name}</Text>
-          <Text color={mode("gray.600", "gray.400")} fontSize="sm">
+          <Text
+            fontSize={{ base: '5rem', md: '2rem', lg: '1.5rem' }}
+            fontWeight="medium"
+          >
+            {name}
+          </Text>
+          <Text
+            color={mode('gray.600', 'gray.400')}
+            fontSize={{ base: '2rem', md: '1rem', lg: 'sm' }}
+          >
             {description}
           </Text>
         </Stack>

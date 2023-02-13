@@ -14,17 +14,28 @@ const ModalComponent = ({ children, isOpen, onClose, size, title, form }) => {
     <Modal size={size} isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{title}</ModalHeader>
+        <ModalHeader fontSize={{ base: '6xl', md: '3xl', lg: 'xl' }}>
+          {title}
+        </ModalHeader>
         <ModalCloseButton />
         <ModalBody>{children}</ModalBody>
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <Button
+            fontSize={{ base: '6xl', md: '3xl', lg: 'md' }}
+            py={{ base: '4rem', md: '3rem', lg: '1rem' }}
+            px={{ base: '4rem', md: '3rem', lg: '1rem' }}
+            colorScheme="blue"
+            mr={{ base: '20', md: '20', lg: '3' }}
+            onClick={onClose}
+          >
             Закрити
           </Button>
           <Button
-            type="submit"
+            fontSize={{ base: '6xl', md: '3xl', lg: 'md' }}
+            py={{ base: '4rem', md: '3rem', lg: '1rem' }}
+            px={{ base: '4rem', md: '3rem', lg: '1rem' }}
+            type={'submit'}
             form={form}
-            onClick={onClose}
             colorScheme="green"
           >
             Підтвердити

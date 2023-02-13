@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ProductList, NavBar, Footer, Loader } from "../../components";
+import { useState } from 'react';
+import { ProductList, NavBar, Footer, Loader } from '../../components';
 const StorePage = () => {
   const [loaded, setLoaded] = useState(false);
 

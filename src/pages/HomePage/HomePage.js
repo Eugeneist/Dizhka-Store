@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Text, Heading, Box } from '@chakra-ui/react';
 import {
   Form,
@@ -12,10 +11,7 @@ import {
 } from '../../components';
 import '../../App.css';
 import { SectionContainer, SectionInner, Divider } from '../../styles/Styles';
-import { useDispatch } from 'react-redux';
-import { addToProducts } from '../../actions/productsActions';
-import { useScreenWidth, useHelloMessage } from '../../hooks';
-import { axios } from '../../helpers';
+import { useScreenWidth, useHelloMessage, useProductsGet } from '../../hooks';
 
 import bg_about from '../../assets/images/bg_about.jpg';
 import divider01 from '../../assets/images/divider02.jpg';
@@ -31,28 +27,9 @@ import vodka from '../../assets/images/vodka.jpg';
 import bg_vodka from '../../assets/images/bg_vodka.jpg';
 
 const HomePage = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState();
+  const { loading, error } = useProductsGet();
 
-  const { showHelloMessage, isOpen, onClose, overlay } = useHelloMessage();
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get(`/api/products`)
-      .then((data) => {
-        dispatch(addToProducts(data));
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
-        setTimeout(showHelloMessage, 5000);
-      });
-  }, [dispatch]);
+  const { isOpen, onClose, overlay } = useHelloMessage();
 
   const tablet = useScreenWidth();
 
@@ -75,13 +52,13 @@ const HomePage = () => {
               fontFamily="KTFJermilov, sans-serif"
               color="#fff"
               py={4}
-              fontSize={tablet ? '8rem' : '3rem'}
+              fontSize={{ base: '8rem', md: '8rem', lg: '3rem' }}
             >
               Молода компанія - стародавні традиції!
             </Heading>
             <Text
               fontFamily="'Montserrat', sans-serif"
-              fontSize={tablet ? '4rem' : '1rem'}
+              fontSize={{ base: '4rem', md: '4rem', lg: '1rem' }}
               color="#fff"
               paddingBottom="0,3125rem"
             >
@@ -90,7 +67,7 @@ const HomePage = () => {
             </Text>
             <Text
               fontFamily="'Montserrat', sans-serif"
-              fontSize={tablet ? '4rem' : '1rem'}
+              fontSize={{ base: '4rem', md: '4rem', lg: '1rem' }}
               color="#fff"
               paddingBottom="0,625rem"
             >
@@ -119,7 +96,7 @@ const HomePage = () => {
       >
         <Heading
           fontFamily="KTFJermilov, sans-serif"
-          fontSize={tablet ? '15rem' : '6rem'}
+          fontSize={{ base: '15rem', md: '15rem', lg: '6rem' }}
           color="#fff"
           py={4}
         >
@@ -172,7 +149,7 @@ const HomePage = () => {
       >
         <Heading
           fontFamily="KTFJermilov, sans-serif"
-          fontSize={tablet ? '15rem' : '6rem'}
+          fontSize={{ base: '15rem', md: '15rem', lg: '6rem' }}
           color="#fff"
           textTransform={'uppercase'}
           py={4}
@@ -220,7 +197,7 @@ const HomePage = () => {
       >
         <Heading
           fontFamily="KTFJermilov, sans-serif"
-          fontSize={tablet ? '15rem' : '6rem'}
+          fontSize={{ base: '15rem', md: '15rem', lg: '6rem' }}
           color="#fff"
           textTransform={'uppercase'}
           py={4}
@@ -268,7 +245,7 @@ const HomePage = () => {
       >
         <Heading
           fontFamily="KTFJermilov, sans-serif"
-          fontSize={tablet ? '15rem' : '6rem'}
+          fontSize={{ base: '15rem', md: '15rem', lg: '6rem' }}
           color="#fff"
           py={4}
         >
@@ -293,13 +270,25 @@ const HomePage = () => {
           />
         </SectionInner>
       </SectionContainer>
-      <CallToAction />
       <SectionContainer
         style={{
           backgroundColor: '#000',
           justifyContent: 'center',
           textAlign: 'center',
-          height: tablet ? '100%' : '100vh',
+          backgroundAttachment: 'scroll',
+          height: 'auto',
+        }}
+      >
+        <SectionInner style={{ margin: 0, maxWidth: 'none' }}>
+          <CallToAction />
+        </SectionInner>
+      </SectionContainer>
+      <SectionContainer
+        style={{
+          backgroundColor: '#000',
+          justifyContent: 'center',
+          textAlign: 'center',
+          height: 'auto',
           backgroundAttachment: 'scroll',
         }}
       >

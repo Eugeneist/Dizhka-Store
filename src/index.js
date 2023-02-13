@@ -7,7 +7,6 @@ import './index.css';
 import App from './App';
 import './assets/fonts/KTFJermilov-Solid.ttf';
 import { PersistGate } from 'redux-persist/integration/react';
-import reportWebVitals from './reportWebVitals';
 import { ScrollToTop } from './components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,5 +20,3 @@ root.render(
     </BrowserRouter>
   </Provider>,
 );
-
-reportWebVitals();

@@ -1,4 +1,4 @@
-import { NavBar, Footer, Contacts } from "../../components";
+import { NavBar, Footer, Contacts } from '../../components';
 
 const ContactPage = () => {
   return (

@@ -1,5 +1,5 @@
-import { Parallax } from "../Parallax";
-import { NavBar } from "../NavBar";
+import { Parallax } from '../Parallax';
+import { NavBar } from '../NavBar';
 
 const Header = () => {
   return (

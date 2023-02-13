@@ -1,26 +1,30 @@
+import { useRef } from 'react';
+import { useForm } from 'react-hook-form';
 import {
+  Flex,
   Box,
   Button,
-  FormControl,
-  FormLabel,
   Heading,
   IconButton,
-  Input,
-  InputGroup,
-  InputLeftElement,
   Link,
   Stack,
-  Textarea,
   Tooltip,
   useClipboard,
   useColorModeValue,
   VStack,
   defineStyle,
   defineStyleConfig,
+  useToast,
 } from '@chakra-ui/react';
-import { BsPerson, BsTelegram } from 'react-icons/bs';
+import { BsTelegram } from 'react-icons/bs';
 import { GrInstagram } from 'react-icons/gr';
-import { MdEmail, MdOutlineEmail } from 'react-icons/md';
+import { MdEmail } from 'react-icons/md';
+import {
+  FormLabel,
+  FormInput,
+  FormTextarea,
+  FormContainer,
+} from '../../styles/Styles';
 
 const mb = defineStyle({
   width: '20px',
@@ -34,13 +38,52 @@ export const buttonTheme = defineStyleConfig({
 const Form = () => {
   const { hasCopied, onCopy } = useClipboard('example@example.com');
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const toast = useToast();
+  const toastIdRef = useRef();
+
+  const clearForm = () => {
+    let name = document.getElementById('form_name');
+    let mail = document.getElementById('form_mail');
+    let text = document.getElementById('form_text');
+    name.value = '';
+    mail.value = '';
+    text.value = '';
+    toastIdRef.current = toast({
+      title: 'Повідомлення відправлено!',
+      status: 'success',
+    });
+  };
+
+  const onSubmit = (data) => {
+    console.log(data);
+    clearForm();
+  };
+
   return (
-    <Box>
-      <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+    <Flex
+      justify={'center'}
+      height={{ base: 'auto', md: 'auto', lg: '100vh' }}
+      py={{ base: '200px', md: '200px', lg: '20px' }}
+      px={{ base: '20px', md: '20px', lg: '20px' }}
+    >
+      <VStack
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+        spacing={{ base: 4, md: 8, lg: 20 }}
+      >
         <Heading
           textTransform={'uppercase'}
-          fontSize={{ base: '7rem', md: '3rem', lg: '3rem' }}
+          fontSize={{ base: '7rem', md: '6rem', lg: '3rem' }}
           color={'#fff'}
+          pb={{ base: '45px', md: '55px', lg: '10px' }}
         >
           Або напиши нам!
         </Heading>
@@ -56,6 +99,7 @@ const Form = () => {
           <Stack
             align="center"
             justify="space-around"
+            spacing={{ base: '20', md: '30', lg: '35' }}
             direction={{ base: 'row', md: 'column' }}
           >
             <Tooltip
@@ -66,7 +110,8 @@ const Form = () => {
               <IconButton
                 aria-label="email"
                 bgColor={'#fff'}
-                size="lg"
+                w={{ base: '9rem', md: '6rem', lg: '3rem' }}
+                h={{ base: '9rem', md: '6rem', lg: '3rem' }}
                 fontSize="3xl"
                 icon={<MdEmail size="28px" />}
                 _hover={{
@@ -82,7 +127,8 @@ const Form = () => {
               <IconButton
                 aria-label="telegram"
                 bgColor={'#fff'}
-                size="lg"
+                w={{ base: '9rem', md: '6rem', lg: '3rem' }}
+                h={{ base: '9rem', md: '6rem', lg: '3rem' }}
                 fontSize="3xl"
                 icon={<BsTelegram size="28px" />}
                 _hover={{
@@ -97,7 +143,8 @@ const Form = () => {
               <IconButton
                 aria-label="instagram"
                 bgColor={'#fff'}
-                size="lg"
+                w={{ base: '9rem', md: '6rem', lg: '3rem' }}
+                h={{ base: '9rem', md: '6rem', lg: '3rem' }}
                 fontSize="3xl"
                 icon={<GrInstagram size="28px" />}
                 _hover={{
@@ -112,68 +159,84 @@ const Form = () => {
           <Box
             bg={useColorModeValue('white', 'gray.700')}
             borderRadius="lg"
-            p={{ base: '20', md: '8', lg: '8' }}
+            px={{ base: '30', md: '12', lg: '8' }}
+            py={{ base: '30', md: '8', lg: '8' }}
             color={useColorModeValue('gray.700', 'whiteAlpha.900')}
             shadow="base"
           >
             <VStack
-              width={{ base: '300px', md: '300px', lg: '500px' }}
+              width={{ base: '300px', md: '500px', lg: '500px' }}
               height={'100%'}
               spacing={{ base: '15', md: '10', lg: '5' }}
             >
-              <FormControl isRequired>
-                <FormLabel fontSize={{ base: '4rem', md: '1rem', lg: '1rem' }}>
-                  Ім'я
-                </FormLabel>
+              <FormContainer
+                id="form_message"
+                onSubmit={handleSubmit(onSubmit)}
+              >
+                {errors.name &&
+                  (toastIdRef.current = toast({
+                    description: "Будь-ласка, введіть Ваше ім'я!",
+                    status: 'error',
+                    position: 'top',
+                  }))}
 
-                <InputGroup>
-                  <InputLeftElement children={<BsPerson />} />
-                  <Input
-                    fontSize={{ base: '3rem', md: '1rem', lg: '1rem' }}
-                    height={{ base: '50px', md: '40px', lg: '40px' }}
-                    type="text"
-                    name="name"
+                <FormLabel>
+                  Ваше ім'я:
+                  <FormInput
+                    id="form_name"
                     placeholder="Ваше ім'я"
+                    type="text"
+                    {...register('name', { required: true })}
                   />
-                </InputGroup>
-              </FormControl>
-
-              <FormControl isRequired>
-                <FormLabel fontSize={{ base: '4rem', md: '1rem', lg: '1rem' }}>
-                  Email
                 </FormLabel>
 
-                <InputGroup>
-                  <InputLeftElement children={<MdOutlineEmail />} />
-                  <Input
-                    fontSize={{ base: '3rem', md: '1rem', lg: '1rem' }}
-                    height={{ base: '50px', md: '40px', lg: '40px' }}
-                    type="email"
-                    name="email"
+                {errors.mail &&
+                  (toastIdRef.current = toast({
+                    description: 'Будь-ласка, введіть Вашу електронну пошту!',
+                    status: 'error',
+                    position: 'top',
+                  }))}
+
+                <FormLabel>
+                  E-mail:
+                  <FormInput
+                    id="form_mail"
                     placeholder="Ваш Email"
+                    type="mail"
+                    {...register('mail', { required: true })}
                   />
-                </InputGroup>
-              </FormControl>
-
-              <FormControl isRequired>
-                <FormLabel fontSize={{ base: '4rem', md: '1rem', lg: '1rem' }}>
-                  Повідомлення
                 </FormLabel>
 
-                <Textarea
-                  fontSize={{ base: '3rem', md: '1rem', lg: '1rem' }}
-                  height={{ base: '150px', md: 'auto', lg: 'auto' }}
-                  name="message"
-                  placeholder="Ваше повідомлення"
-                  rows={6}
-                  resize="none"
-                />
-              </FormControl>
+                {errors.letter &&
+                  (toastIdRef.current = toast({
+                    description: 'Будь-ласка, введіть Ваше повідомлення!',
+                    status: 'error',
+                    position: 'top',
+                  }))}
 
+                <FormLabel>
+                  Повідомлення:
+                  <FormTextarea
+                    id="form_text"
+                    placeholder="Ваше повідомлення"
+                    rows={6}
+                    resize="none"
+                    {...register('letter', {
+                      required: false,
+                      max: 1000,
+                      min: 10,
+                      maxLength: 10000,
+                    })}
+                    {...register('letter', { required: true })}
+                  />
+                </FormLabel>
+              </FormContainer>
               <Button
                 type="submit"
-                fontSize={{ base: '3rem', md: '1rem', lg: '1rem' }}
-                height={{ base: '10rem', md: '2.5rem', lg: '2.5rem' }}
+                form="form_message"
+                fontSize={{ base: '3rem', md: '3rem', lg: '1rem' }}
+                height={{ base: '10rem', md: '8rem', lg: '2.5rem' }}
+                px={{ base: '15px', md: '15px', lg: '20px' }}
                 colorScheme="blue"
                 bg="#f88654"
                 color="white"
@@ -181,13 +244,13 @@ const Form = () => {
                   bg: '#000',
                 }}
               >
-                Надіслати повідомлення
+                Надіслати
               </Button>
             </VStack>
           </Box>
         </Stack>
       </VStack>
-    </Box>
+    </Flex>
   );
 };
 

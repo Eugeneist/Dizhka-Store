@@ -1,23 +1,20 @@
-import { ParallaxBanner } from "react-scroll-parallax";
-import { Heading } from "@chakra-ui/react";
-import { useScreenWidth } from "../../hooks";
-import "../../App.css";
+import { ParallaxBanner } from 'react-scroll-parallax';
+import { Heading } from '@chakra-ui/react';
+import '../../App.css';
 
-import bg from "../../assets/images/bg.jpg";
-import foreground from "../../assets/images/bg_front.png";
+import bg from '../../assets/images/bg.jpg';
+import foreground from '../../assets/images/bg_front.png';
 
 const Parallax = () => {
-  const tablet = useScreenWidth();
-
   return (
     <>
       <ParallaxBanner
         style={{
-          width: "100%",
-          height: "100vh",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          width: '100%',
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
         layers={[
           { image: bg, speed: -10 },
@@ -29,7 +26,11 @@ const Parallax = () => {
                 className="parallax__title"
                 position="absolute"
                 fontFamily="KTFJermilov, sans-serif"
-                fontSize={tablet ? "17rem" : "6.25rem"}
+                fontSize={{
+                  base: '17rem',
+                  md: '17rem',
+                  lg: '6.25rem',
+                }}
                 fontWeight="normal"
                 top="220px"
                 right="50%"

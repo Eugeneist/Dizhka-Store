@@ -1,4 +1,4 @@
-import { NavBar, Footer, FavoriteList } from "../../components";
+import { NavBar, Footer, FavoriteList } from '../../components';
 
 const FavoritePage = () => {
   return (

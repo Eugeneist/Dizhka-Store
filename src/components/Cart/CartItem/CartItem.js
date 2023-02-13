@@ -10,17 +10,31 @@ import {
   Box,
   Text,
   Button,
-} from "@chakra-ui/react";
-import { CartProductMeta } from "../CartProductMeta";
+} from '@chakra-ui/react';
+import { CartProductMeta } from '../CartProductMeta';
 
 const QuantitySelect = ({ value, addProduct, removeProduct, product }) => {
   return (
-    <FormControl width={20}>
-      <NumberInput value={value} max={100} min={1}>
-        <NumberInputField />
-        <NumberInputStepper>
-          <NumberIncrementStepper onClick={() => addProduct(product)} />
-          <NumberDecrementStepper onClick={() => removeProduct(product)} />
+    <FormControl width={{ base: '100px', md: '40', lg: '20' }}>
+      <NumberInput
+        height={{ base: '50px', md: '20', lg: '12' }}
+        value={value}
+        max={100}
+        min={1}
+      >
+        <NumberInputField
+          fontSize={{ base: '4rem', md: '2rem', lg: 'sm' }}
+          height={{ base: '50px', md: '20', lg: '12' }}
+        />
+        <NumberInputStepper width={{ base: '50px', md: '20', lg: '7' }}>
+          <NumberIncrementStepper
+            fontSize={{ base: '2rem', md: 'md', lg: 'sm' }}
+            onClick={() => addProduct(product)}
+          />
+          <NumberDecrementStepper
+            fontSize={{ base: '2rem', md: 'md', lg: 'sm' }}
+            onClick={() => removeProduct(product)}
+          />
         </NumberInputStepper>
       </NumberInput>
     </FormControl>
@@ -45,10 +59,10 @@ const CartItem = ({
 }) => {
   return (
     <Flex
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: 'column', md: 'row' }}
       justify="space-between"
       align="center"
-      pb={200}
+      pb={50}
     >
       <CartProductMeta
         name={title}
@@ -61,7 +75,7 @@ const CartItem = ({
         width="full"
         justify="space-between"
         alignItems="center"
-        display={{ base: "none", md: "flex" }}
+        display={{ base: 'none', md: 'flex' }}
       >
         <QuantitySelect
           value={amount}
@@ -85,18 +99,20 @@ const CartItem = ({
         align="center"
         width="full"
         justify="space-between"
-        display={{ base: "flex", md: "none" }}
+        display={{ base: 'flex', md: 'none' }}
       >
         <Button
-          fontSize="sm"
-          bgColor={"transparent"}
+          fontSize={{ base: '2rem', md: '2rem', lg: 'sm' }}
+          bgColor={'transparent'}
           variant="solid"
           onClick={() => deleteProduct(product)}
         >
           Видалити
         </Button>
         <Box>
-          <Text>{(price * amount).toFixed(2)} ГРН</Text>
+          <Text fontSize={{ base: '4rem', md: '2rem', lg: 'sm' }}>
+            {(price * amount).toFixed(2)} ГРН
+          </Text>
         </Box>
         <QuantitySelect
           addProduct={addProduct}

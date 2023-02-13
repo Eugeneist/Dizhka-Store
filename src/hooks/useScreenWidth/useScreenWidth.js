@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useScreenWidth = () => {
   const [tablet, setTablet] = useState(false);
@@ -6,7 +6,7 @@ const useScreenWidth = () => {
   const availableScreenWidth = window.screen.availWidth;
 
   useEffect(() => {
-    if (availableScreenWidth < 830) {
+    if (availableScreenWidth < 900) {
       setTablet(true);
     }
   }, [availableScreenWidth]);

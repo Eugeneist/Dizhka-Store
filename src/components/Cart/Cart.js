@@ -103,11 +103,18 @@ const Cart = () => {
         }}
       >
         <Text
-          fontSize={{ base: '3rem', md: '1.5rem', lg: '1.5rem' }}
+          fontSize={{ base: '4rem', md: '1.5rem', lg: '1.5rem' }}
+          fontFamily="'Montserrat', sans-serif"
+          pb={5}
+        >
+          Кошик порожній!
+        </Text>
+        <Text
+          fontSize={{ base: '4rem', md: '1.5rem', lg: '1.5rem' }}
           fontFamily="'Montserrat', sans-serif"
           pb={25}
         >
-          Кошик порожній! Давай заповнювати!
+          Давай заповнювати!
         </Text>
         <NavLink to="/store">
           <Button
@@ -133,7 +140,8 @@ const Cart = () => {
 
   return (
     <Box
-      maxW={{ base: '3xl', lg: '7xl' }}
+      minH={'100vh'}
+      maxW={{ base: '8xl', md: '6xl', lg: '7xl' }}
       mx="auto"
       px={{ base: '4', md: '8', lg: '12' }}
       py={{ base: '10', md: '14', lg: '16' }}
@@ -144,7 +152,10 @@ const Cart = () => {
         spacing={{ base: '8', md: '16' }}
       >
         <Stack spacing={{ base: '8', md: '10' }} flex="2">
-          <Heading fontSize="2xl" fontWeight="extrabold">
+          <Heading
+            fontSize={{ base: '7xl', md: '3xl', lg: '2xl' }}
+            fontWeight="extrabold"
+          >
             Твій кошик ({state.length} {message})
           </Heading>
 
@@ -169,7 +180,11 @@ const Cart = () => {
             clearCart={clearAllCart}
             calculateTotal={calculateTotal}
           />
-          <HStack mt="6" fontWeight="semibold">
+          <HStack
+            mt="6"
+            fontWeight="semibold"
+            fontSize={{ base: '5xl', md: '3xl', lg: 'lg' }}
+          >
             <p>чи</p>
             <NavLink to={`/store`}>
               <Link color={mode('gray.600', 'gray.400')}>

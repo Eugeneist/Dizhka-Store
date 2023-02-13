@@ -1,12 +1,10 @@
-import { NavBar, Footer, Cart } from "../../components";
+import { NavBar, Footer, Cart } from '../../components';
 
 const CartPage = () => {
   return (
     <>
       <NavBar />
-
       <Cart />
-
       <Footer />
     </>
   );

@@ -15,14 +15,25 @@ const CartOrderSummary = ({ products, calculateTotal, clearCart }) => {
 
   return (
     <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
-      <Heading size="md">Загальне замовлення</Heading>
+      <Heading size={{ base: '4xl', md: 'xl', lg: 'md' }}>
+        Загальне замовлення
+      </Heading>
 
       <Stack spacing="6">
-        <Flex justify="space-between">
-          <Text fontSize="lg" fontWeight="semibold">
-            В цілому: {calculateTotal} ГРН
+        <Flex justify="start" align="center">
+          <Text
+            fontSize={{ base: '6xl', md: '3xl', lg: 'lg' }}
+            fontWeight="semibold"
+            pr="10px"
+          >
+            В цілому:
           </Text>
-          <Text fontSize="xl" fontWeight="extrabold"></Text>
+          <Text
+            fontSize={{ base: '7xl', md: '5xl', lg: 'lg' }}
+            fontWeight="semibold"
+          >
+            {calculateTotal} ГРН
+          </Text>
         </Flex>
       </Stack>
       <Button
@@ -30,7 +41,8 @@ const CartOrderSummary = ({ products, calculateTotal, clearCart }) => {
         bgColor="#f88654"
         color="#fff"
         size="lg"
-        fontSize="md"
+        p={{ base: '20px', md: '20px' }}
+        fontSize={{ base: '5xl', md: '3xl', lg: 'md' }}
         transition={'all ease 0.3s'}
         rightIcon={<FaArrowRight />}
         _hover={{
@@ -45,13 +57,14 @@ const CartOrderSummary = ({ products, calculateTotal, clearCart }) => {
         isOpen={isOpen}
         onClose={onClose}
         title="Ваше замовлення"
-        size={'2xl'}
-        form={'orderForm'}
+        size={{ base: '8xl', md: '6xl', lg: '2xl' }}
+        form={'order'}
       >
         <OrderForm
           products={products}
           totalPrice={calculateTotal}
           clearCart={clearCart}
+          onClose={onClose}
         />
       </ModalComponent>
     </Stack>

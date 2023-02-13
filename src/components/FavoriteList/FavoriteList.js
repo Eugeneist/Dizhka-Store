@@ -30,11 +30,18 @@ const FavoriteList = () => {
         }}
       >
         <Text
-          fontSize={{ base: '5.5rem', md: '1.5rem', lg: '1.5rem' }}
+          fontSize={{ base: '4rem', md: '1.5rem', lg: '1.5rem' }}
+          fontFamily="'Montserrat', sans-serif"
+          pb={5}
+        >
+          Ваш лист побажань порожній!
+        </Text>
+        <Text
+          fontSize={{ base: '4rem', md: '1.5rem', lg: '1.5rem' }}
           fontFamily="'Montserrat', sans-serif"
           pb={25}
         >
-          Ваш лист побажань порожній! Це можна виправити у Лавці.
+          Це можна виправити у Лавці.
         </Text>
         <NavLink to="/store">
           <Button
@@ -61,6 +68,7 @@ const FavoriteList = () => {
   return (
     <Container
       style={{
+        minHeight: '100vh',
         backgroundColor: '#000',
         color: '#fff',
         display: 'flex',
@@ -70,7 +78,14 @@ const FavoriteList = () => {
       }}
     >
       <SectionInner>
-        <Grid templateColumns="repeat(3, 1fr)" gap={4}>
+        <Grid
+          templateColumns={{
+            base: 'repeat(1, 1fr)',
+            md: 'repeat(3, 1fr)',
+            lg: 'repeat(3, 1fr)',
+          }}
+          gap={4}
+        >
           {favorite.map((product) => (
             <ProductCard
               key={product.id}
