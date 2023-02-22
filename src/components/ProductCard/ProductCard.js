@@ -78,6 +78,7 @@ const ProductCard = ({
 
   return (
     <Box
+      margin={'0 auto'}
       bg={useColorModeValue('#000', 'gray.800')}
       maxW={{ base: '90%', md: '90%', lg: '100%' }}
       shadow="lg"
