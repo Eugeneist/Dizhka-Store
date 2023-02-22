@@ -13,3 +13,6 @@ DIZHKA Store або просто eCommerce магазин.
 ![2](https://user-images.githubusercontent.com/91960555/220698110-54d104dd-9a4b-4a8d-83a4-7581c7214723.jpg)
 ![3](https://user-images.githubusercontent.com/91960555/220698148-76f9689f-c2e6-4fb0-ae06-ed227117e450.jpg)
 ![4](https://user-images.githubusercontent.com/91960555/220698182-f321f503-d668-4461-85c6-8e1d5f088ea4.jpg)
+
+<b> Увага! Магазин створено виключно в учбових та демонстраційних цілях, для портфоліо. Ніякі із представлених товарів не існують та купити їх не можна!
+Гарного ознайомлення! </b>
