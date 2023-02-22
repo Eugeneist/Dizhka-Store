@@ -8,3 +8,8 @@ DIZHKA Store або просто eCommerce магазин.
 
 Ознайомитись з додатком можна онлайн за посиланням: https://eugeneist.github.io/Dizhka-Store/ 
 Код додатку до Вашої уваги вище, тут, на GitHub.
+
+![1](https://user-images.githubusercontent.com/91960555/220698077-f9461e1f-40e8-4a01-8e38-47900d4cb2a0.jpg)
+![2](https://user-images.githubusercontent.com/91960555/220698110-54d104dd-9a4b-4a8d-83a4-7581c7214723.jpg)
+![3](https://user-images.githubusercontent.com/91960555/220698148-76f9689f-c2e6-4fb0-ae06-ed227117e450.jpg)
+![4](https://user-images.githubusercontent.com/91960555/220698182-f321f503-d668-4461-85c6-8e1d5f088ea4.jpg)
