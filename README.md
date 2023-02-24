@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+DIZHKA Store або просто eCommerce магазин.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Додаток виконано з використанням бібліоткеи <b>React</b> та бібліотеки UI компонентів – <b>Chakra UI</b>. 
+Дизайн повністю розроблявся самостійно.
 
-## Available Scripts
+<b>Також були використані</b>: <b>AXIOS</b> для запитів до API, <b>React Router</b> для маршрутизації додатку, <b>Redux</b> для керування станом додатку та його запитів, <b>Redux Persist</b> для збереження даних у Local Storage, <b>React Hook Form</b> для побудови та валідації форми, <b>Styled Components</b> – для корегування зовнішнього вигляду, <b>React Scroll-Parallax</b> – для побудови паралакс ефекту.
 
-In the project directory, you can run:
+<b> Реалізовані</b>: головна сторінка, сторінка з переліком товарів, індивідуальна сторінка товару, кошик, форма замовлення, зворотня форма, лоадер, сторінка вибраних товарів, компонент фільтрації товару, сторінка 404.
 
-### `npm start`
+Бекенд частина (невеличке API) створена за допомогою <b>NodeJS</b> з використанням бібліотеки <b>Express</b>, модуля <b>FS</b> та пакету <b>CORS</b>. Переглянути можна у окремій гілці проекту або за посиланням: https://github.com/Eugeneist/Dizhka-Store/tree/backendAPI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+! <b> Також слід зазначити, що API розгорнуто на онлайн сервісі render.com , тож перше завантаження може бути дещо довшим ( через те, що "сплячий" бекенд для роботи повинен на сервісі "прокинутися". </b>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Реалізовані десктопна та мобільні версії.
 
-### `npm test`
+Ознайомитись з додатком можна онлайн за посиланням: https://eugeneist.github.io/Dizhka-Store/ 
+Код додатку до Вашої уваги вище, тут, на GitHub.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![1](https://user-images.githubusercontent.com/91960555/220698077-f9461e1f-40e8-4a01-8e38-47900d4cb2a0.jpg)
+![2](https://user-images.githubusercontent.com/91960555/220698110-54d104dd-9a4b-4a8d-83a4-7581c7214723.jpg)
+![3](https://user-images.githubusercontent.com/91960555/220698148-76f9689f-c2e6-4fb0-ae06-ed227117e450.jpg)
+![4](https://user-images.githubusercontent.com/91960555/220698182-f321f503-d668-4461-85c6-8e1d5f088ea4.jpg)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<b> Увага! Магазин створено виключно в учбових та демонстраційних цілях, для портфоліо. Ніякі із представлених товарів не існують та купити їх не можна!
+Гарного ознайомлення! </b>
