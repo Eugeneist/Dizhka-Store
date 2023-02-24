@@ -15,8 +15,6 @@ import {
   DrawerContent,
   DrawerCloseButton,
   DrawerBody,
-  DrawerFooter,
-  Button,
 } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';

@@ -19,6 +19,7 @@ import {
 import { TfiMoreAlt } from 'react-icons/tfi';
 import { FiShoppingCart } from 'react-icons/fi';
 import { IoHeartOutline, IoHeartSharp } from 'react-icons/io5';
+import PropTypes from 'prop-types';
 
 const ProductCard = ({
   id,
@@ -78,6 +79,7 @@ const ProductCard = ({
 
   return (
     <Box
+      margin={'0 auto'}
       bg={useColorModeValue('#000', 'gray.800')}
       maxW={{ base: '90%', md: '90%', lg: '100%' }}
       shadow="lg"
@@ -200,6 +202,19 @@ const ProductCard = ({
       </Box>
     </Box>
   );
+};
+
+ProductCard.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  descriptionTitle: PropTypes.string,
+  description: PropTypes.string,
+  details: PropTypes.string,
+  price: PropTypes.string,
+  rating: PropTypes.string,
+  category: PropTypes.string,
+  thumbnail: PropTypes.string,
+  product: PropTypes.object,
 };
 
 export default ProductCard;

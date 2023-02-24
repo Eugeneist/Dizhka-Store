@@ -8,6 +8,7 @@ import {
   ModalCloseButton,
   Button,
 } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
 
 const ModalComponent = ({ children, isOpen, onClose, size, title, form }) => {
   return (
@@ -44,6 +45,15 @@ const ModalComponent = ({ children, isOpen, onClose, size, title, form }) => {
       </ModalContent>
     </Modal>
   );
+};
+
+ModalComponent.propTypes = {
+  children: PropTypes.element.isRequired,
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  size: PropTypes.object,
+  title: PropTypes.string,
+  form: PropTypes.string,
 };
 
 export default ModalComponent;

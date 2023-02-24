@@ -1,5 +1,6 @@
 import { Flex, Box } from '@chakra-ui/react';
 import { FilterIcons } from '../FilterIcons';
+import PropTypes from 'prop-types';
 import '../../App.css';
 
 const ProductFilter = ({ state, setFilter }) => {
@@ -82,6 +83,11 @@ const ProductFilter = ({ state, setFilter }) => {
       </Box>
     </Flex>
   );
+};
+
+ProductFilter.propTypes = {
+  state: PropTypes.array,
+  setFilter: PropTypes.func,
 };
 
 export default ProductFilter;

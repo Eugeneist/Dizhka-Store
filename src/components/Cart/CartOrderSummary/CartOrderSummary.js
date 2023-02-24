@@ -9,6 +9,7 @@ import {
 import { FaArrowRight } from 'react-icons/fa';
 import { ModalComponent } from '../../ModalComponent';
 import { OrderForm } from '../../OrderForm';
+import PropTypes from 'prop-types';
 
 const CartOrderSummary = ({ products, calculateTotal, clearCart }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -69,6 +70,12 @@ const CartOrderSummary = ({ products, calculateTotal, clearCart }) => {
       </ModalComponent>
     </Stack>
   );
+};
+
+CartOrderSummary.propTypes = {
+  products: PropTypes.string,
+  calculateTotal: PropTypes.string,
+  clearCart: PropTypes.func,
 };
 
 export default CartOrderSummary;

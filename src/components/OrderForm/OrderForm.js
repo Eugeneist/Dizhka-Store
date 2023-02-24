@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Flex, useToast } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
 import {
   FormLabel,
   FormInput,
@@ -196,6 +197,13 @@ const OrderForm = ({ products, totalPrice, clearCart, onClose }) => {
       </FormLabel>
     </FormContainer>
   );
+};
+
+OrderForm.propTypes = {
+  clearCart: PropTypes.func,
+  onClose: PropTypes.func,
+  products: PropTypes.string,
+  totalPrice: PropTypes.string,
 };
 
 export default OrderForm;

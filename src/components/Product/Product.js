@@ -51,11 +51,6 @@ const Product = () => {
     });
   };
 
-  // useEffect(() => {
-  //   const filteredList = state.filter((x) => x.id === id);
-  //   setProduct(filteredList);
-  // }, [id, state]);
-
   return (
     <Container maxW={'7xl'}>
       <SimpleGrid

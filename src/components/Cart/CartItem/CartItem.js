@@ -12,6 +12,7 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { CartProductMeta } from '../CartProductMeta';
+import PropTypes from 'prop-types';
 
 const QuantitySelect = ({ value, addProduct, removeProduct, product }) => {
   return (
@@ -124,6 +125,30 @@ const CartItem = ({
       </Flex>
     </Flex>
   );
+};
+
+QuantitySelect.propTypes = {
+  value: PropTypes.number,
+  addProduct: PropTypes.func,
+  removeProduct: PropTypes.func,
+  product: PropTypes.object,
+};
+
+CartItem.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  descriptionTitle: PropTypes.string,
+  description: PropTypes.string,
+  details: PropTypes.string,
+  price: PropTypes.string,
+  rating: PropTypes.string,
+  category: PropTypes.string,
+  thumbnail: PropTypes.string,
+  product: PropTypes.object,
+  amount: PropTypes.number,
+  addProduct: PropTypes.func,
+  removeProduct: PropTypes.func,
+  deleteProduct: PropTypes.func,
 };
 
 export default CartItem;

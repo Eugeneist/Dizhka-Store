@@ -1,8 +1,9 @@
-import "../../App.css";
+import '../../App.css';
+import PropTypes from 'prop-types';
 
 const FilterIcons = ({ image }) => {
   switch (image) {
-    case "all":
+    case 'all':
       return (
         <svg
           width="100px"
@@ -33,7 +34,7 @@ const FilterIcons = ({ image }) => {
           </g>
         </svg>
       );
-    case "beer":
+    case 'beer':
       return (
         <svg
           width="100px"
@@ -72,7 +73,7 @@ const FilterIcons = ({ image }) => {
           </g>
         </svg>
       );
-    case "gin":
+    case 'gin':
       return (
         <svg
           width="100px"
@@ -124,7 +125,7 @@ const FilterIcons = ({ image }) => {
           </g>
         </svg>
       );
-    case "whiskey":
+    case 'whiskey':
       return (
         <svg
           width="100px"
@@ -175,7 +176,7 @@ const FilterIcons = ({ image }) => {
           </g>
         </svg>
       );
-    case "vodka":
+    case 'vodka':
       return (
         <svg
           width="100px"
@@ -242,4 +243,9 @@ const FilterIcons = ({ image }) => {
       return <svg></svg>;
   }
 };
+
+FilterIcons.propTypes = {
+  image: PropTypes.string,
+};
+
 export default FilterIcons;

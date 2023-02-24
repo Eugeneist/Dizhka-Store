@@ -20,6 +20,7 @@ const ProductList = () => {
     <Container style={{ backgroundColor: '#000', color: '#fff' }}>
       <SectionInner>
         <Flex
+          margin={'0 auto'}
           direction={{
             base: 'row',
             md: 'column',
@@ -28,6 +29,7 @@ const ProductList = () => {
         >
           <ProductFilter state={state} setFilter={setFilter} />
           <Grid
+            margin={'0 auto'}
             templateColumns={{
               base: 'repeat(1, 1fr)',
               md: 'repeat(3, 1fr)',

@@ -5,6 +5,7 @@ import {
   Text,
   useColorModeValue as mode,
 } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
 
 const CartProductMeta = ({ name, image, description }) => {
   return (
@@ -37,6 +38,12 @@ const CartProductMeta = ({ name, image, description }) => {
       </Box>
     </Stack>
   );
+};
+
+CartProductMeta.propTypes = {
+  name: PropTypes.string,
+  image: PropTypes.string,
+  description: PropTypes.string,
 };
 
 export default CartProductMeta;

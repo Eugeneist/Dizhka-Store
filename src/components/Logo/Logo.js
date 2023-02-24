@@ -1,5 +1,6 @@
-import { Link } from "@chakra-ui/react";
-import { LogoInner } from "../../styles/Styles";
+import { Link } from '@chakra-ui/react';
+import { LogoInner } from '../../styles/Styles';
+import PropTypes from 'prop-types';
 
 const Logo = ({ width, height }) => {
   return (
@@ -39,6 +40,11 @@ const Logo = ({ width, height }) => {
       </Link>
     </LogoInner>
   );
+};
+
+Logo.propTypes = {
+  width: PropTypes.string.isRequired,
+  height: PropTypes.string.isRequired,
 };
 
 export default Logo;

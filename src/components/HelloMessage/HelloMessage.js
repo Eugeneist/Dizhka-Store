@@ -7,6 +7,7 @@ import {
   ModalCloseButton,
   Button,
 } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
 
 const HelloMessage = ({ isOpen, onClose, overlay }) => {
   return (
@@ -47,6 +48,12 @@ const HelloMessage = ({ isOpen, onClose, overlay }) => {
       </Modal>
     </>
   );
+};
+
+HelloMessage.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  overlay: PropTypes.element,
 };
 
 export default HelloMessage;
