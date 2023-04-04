@@ -265,7 +265,11 @@ const NavBar = () => {
               fontSize="5rem"
               fontFamily="'Montserrat', sans-serif"
             >
-              <NavLink style={{ marginBottom: '25px' }} to="/">
+              <NavLink
+                onClick={onClose}
+                style={{ marginBottom: '25px' }}
+                to="/"
+              >
                 <Flex align={'center'}>
                   <Icon
                     color={'#fff'}
@@ -287,7 +291,11 @@ const NavBar = () => {
                   </Link>
                 </Flex>
               </NavLink>
-              <NavLink style={{ marginBottom: '25px' }} to="/store">
+              <NavLink
+                onClick={onClose}
+                style={{ marginBottom: '25px' }}
+                to="/store"
+              >
                 <Flex align={'center'}>
                   <Icon
                     color={'#fff'}
@@ -309,7 +317,11 @@ const NavBar = () => {
                   </Link>
                 </Flex>
               </NavLink>
-              <NavLink style={{ marginBottom: '25px' }} to="/contacts">
+              <NavLink
+                onClick={onClose}
+                style={{ marginBottom: '25px' }}
+                to="/contacts"
+              >
                 <Flex align={'center'}>
                   <Icon
                     color={'#fff'}

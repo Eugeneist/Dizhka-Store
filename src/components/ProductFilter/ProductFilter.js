@@ -36,7 +36,7 @@ const ProductFilter = ({ state, setFilter }) => {
         width={{ base: '100px', md: '90px', lg: '100px' }}
         height={{ base: '100px', md: '90px', lg: '100px' }}
         cursor={'pointer'}
-        transition="all ease 0.4s"
+        transition="all ease 0.3s"
         className="filter_box"
       >
         <FilterIcons image={'all'} />
@@ -47,7 +47,7 @@ const ProductFilter = ({ state, setFilter }) => {
         height={{ base: '100px', md: '90px', lg: '100px' }}
         cursor={'pointer'}
         className="filter_box"
-        transition="all ease 0.4s"
+        transition="all ease 0.3s"
       >
         <FilterIcons image={'beer'} />
       </Box>
@@ -56,7 +56,7 @@ const ProductFilter = ({ state, setFilter }) => {
         width={{ base: '100px', md: '90px', lg: '100px' }}
         height={{ base: '100px', md: '90px', lg: '100px' }}
         cursor={'pointer'}
-        transition="all ease 0.4s"
+        transition="all ease 0.3s"
         className="filter_box"
       >
         <FilterIcons image={'gin'} />
@@ -66,7 +66,7 @@ const ProductFilter = ({ state, setFilter }) => {
         width={{ base: '100px', md: '90px', lg: '100px' }}
         height={{ base: '100px', md: '90px', lg: '100px' }}
         cursor={'pointer'}
-        transition="all ease 0.4s"
+        transition="all ease 0.4=3s"
         className="filter_box"
       >
         <FilterIcons image={'whiskey'} />
@@ -76,7 +76,7 @@ const ProductFilter = ({ state, setFilter }) => {
         width={{ base: '100px', md: '90px', lg: '100px' }}
         height={{ base: '100px', md: '90px', lg: '100px' }}
         cursor={'pointer'}
-        transition="all ease 0.4s"
+        transition="all ease 0.3s"
         className="filter_box"
       >
         <FilterIcons image={'vodka'} />

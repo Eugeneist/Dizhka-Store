@@ -95,6 +95,7 @@ const ProductCard = ({
           src={thumbnail}
           alt="alcohol"
           height={{ base: '70rem', md: '25rem', lg: '25rem' }}
+          pb="4"
           style={{
             backgroundSize: 'cober',
             backgroundPosition: '44% 50%',

@@ -1,8 +1,16 @@
+import { useScreenWidth } from '../../hooks';
 import { Parallax } from '../Parallax';
 import { NavBar } from '../NavBar';
 
 const Header = () => {
-  return (
+  const tablet = useScreenWidth();
+
+  return tablet ? (
+    <>
+      <NavBar />
+      <Parallax />
+    </>
+  ) : (
     <>
       <Parallax />
       <NavBar />
