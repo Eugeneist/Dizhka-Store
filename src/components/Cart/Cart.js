@@ -41,7 +41,9 @@ const Cart = () => {
   };
 
   const removeProduct = (product) => {
-    dispatch(removeFromCart(product));
+    if (product.amount > 1) {
+      dispatch(removeFromCart(product));
+    }
   };
 
   const deleteProduct = (product) => {
